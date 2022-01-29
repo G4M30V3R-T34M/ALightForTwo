@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FlareLauncher : MonoBehaviour
 {
-    private enum LauncherState {Waiting, ChosingDirection, ChosingPower, CoolDown};
+    private enum LauncherState {Waiting, ChosingDirection, ChosingPower, Cooldown};
 
     private LauncherState currentState = LauncherState.Waiting;
-    // Start is called before the first frame update
+    [SerializeField] private bool hasCooldown;
     void Start() {
         
     }
@@ -19,16 +19,35 @@ public class FlareLauncher : MonoBehaviour
             switch (currentState)
             {
                 case LauncherState.Waiting:
+                    waitingActions();
                     break;
                 case LauncherState.ChosingDirection:
+                    ChosingDirectionActions();
                     break;
                 case LauncherState.ChosingPower:
+                    ChosingPowerActions();
                     break;
-                case LauncherState.CoolDown:
+                case LauncherState.Cooldown:
                     break;
             }
         }
         
+    }
+
+    private void waitingActions() {
+        currentState = LauncherState.ChosingDirection;
+    }
+
+    private void ChosingDirectionActions() {
+        currentState = LauncherState.ChosingPower;
+    }
+
+    private void ChosingPowerActions() {
+        currentState = hasCooldown ? LauncherState.Cooldown : LauncherState.Waiting;
+    }
+
+    private void CooldownActions() {
+        currentState = LauncherState.Waiting;
     }
 
     public void Launch(Vector2 direction, float power) {
