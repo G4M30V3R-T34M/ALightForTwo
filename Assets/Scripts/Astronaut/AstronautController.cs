@@ -16,9 +16,16 @@ public class AstronautController : MonoBehaviour
     private bool pickableObject;
     GameObject objectToPick;
 
-    private void Awake()
+    public void Awake()
     {
         visibility = GetComponent<VisibilityInteraction>();
+    }
+
+    private void Start()
+    {
+        visibility.InLight += RestoreVelocity;
+        visibility.OutLight += GoSlower;
+        _astronaut.currentVelocity = _astronaut.normalVelocity;
     }
 
     public void Update() {
@@ -70,4 +77,14 @@ public class AstronautController : MonoBehaviour
         Destroy(objectToPick);
         objectToPick = null;
     }
+
+    public void RestoreVelocity() {
+        _astronaut.currentVelocity = _astronaut.normalVelocity;
+    }
+
+    public void GoSlower() {
+        _astronaut.currentVelocity= _astronaut.slowVelocity;
+    }
+
+
 }
