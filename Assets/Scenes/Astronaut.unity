@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerBarSpeed: 0.5
-  maxLength: 4
+  maxLength: 1
   minLength: 0
   powerBar: {fileID: 1860554968}
 --- !u!4 &1664570550 stripped
