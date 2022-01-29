@@ -11,7 +11,7 @@ using UnityEngine;
 public class GoodAlienMain : MonoBehaviour
 {
     VisibilityInteraction visibility;
-    HealthManager healthManager;
+    public HealthManager healthManager;
     public bool IsVisible { get { return visibility.IsVisible; } }
 
     [SerializeField] GoodAlienScriptable _alien ;
