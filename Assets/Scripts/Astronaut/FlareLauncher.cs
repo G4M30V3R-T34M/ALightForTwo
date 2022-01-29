@@ -8,6 +8,9 @@ public class FlareLauncher : MonoBehaviour
 
     private LauncherState currentState = LauncherState.Waiting;
     [SerializeField] private bool hasCooldown;
+    [SerializeField] private float cooldownTime;
+    private float remainingCooldownTime;
+    private Coroutine cooldownCoroutineReference;
     void Start() {
         
     }
@@ -43,11 +46,27 @@ public class FlareLauncher : MonoBehaviour
     }
 
     private void ChosingPowerActions() {
-        currentState = hasCooldown ? LauncherState.Cooldown : LauncherState.Waiting;
+        if (hasCooldown) {
+            currentState =LauncherState.Cooldown;
+            if (cooldownCoroutineReference == null) {
+                cooldownCoroutineReference = StartCoroutine(cooldownCoroutine());
+            }
+        }
+        
     }
 
-    private void CooldownActions() {
+    private IEnumerator cooldownCoroutine() {
+        remainingCooldownTime = cooldownTime;
+        while (remainingCooldownTime > 0) {
+            remainingCooldownTime -= Time.deltaTime;
+            yield return null;
+        }
         currentState = LauncherState.Waiting;
+        cooldownCoroutineReference = null;
+    }
+
+    public float GetRemainingCooldownTime() {
+        return remainingCooldownTime;
     }
 
     public void Launch(Vector2 direction, float power) {
