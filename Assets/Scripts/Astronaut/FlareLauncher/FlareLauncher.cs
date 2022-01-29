@@ -84,8 +84,8 @@ public class FlareLauncher : MonoBehaviour
     }
 
     public void Launch(Vector3 direction, float power) {
-        Debug.Log("Launched");
-        Debug.Log(direction);
-        Debug.Log(power);
+        Flare flare = (Flare)op.getNext();
+        flare.gameObject.SetActive(true);
+        flare.GetComponent<Flare>().Launch(direction, power);
     }
 }

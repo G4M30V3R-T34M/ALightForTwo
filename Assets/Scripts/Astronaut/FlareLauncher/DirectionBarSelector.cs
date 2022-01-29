@@ -20,8 +20,8 @@ public class DirectionBarSelector : MonoBehaviour
 
     public Vector3 GetNormalizedDirection()
     {
-        float radians = ToRadians(transform.rotation.eulerAngles.z);
-        return new Vector3(Mathf.Cos(radians), Mathf.Sin(radians), 0);
+        float radians = ToRadians(-transform.rotation.eulerAngles.z);
+        return new Vector3(Mathf.Sin(radians), Mathf.Cos(radians), 0);
     }
 
     private float ToRadians(float degrees)
