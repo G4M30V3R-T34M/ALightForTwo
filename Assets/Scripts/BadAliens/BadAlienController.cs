@@ -43,7 +43,7 @@ public class BadAlienController : PoolableObject
 
     private bool AstronautVisibleAndInRange() {
         return
-            BadAlienMind.Instance.astronaut.IsVisible &&
+            BadAlienMind.Instance.astronaut.isVisible &&
             Vector2.Distance(BadAlienMind.Instance.astronaut.transform.position, transform.position)
                 <= alien.astronautDetectionDistance;
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 594770088997013757}
   - component: {fileID: 8197763853315475880}
   - component: {fileID: 9063734801908175779}
+  - component: {fileID: 8181256075154723452}
   m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
@@ -96,3 +97,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flare: {fileID: 11400000, guid: 0188dd831e8ca5e4fa8f14d6ff354eaf, type: 2}
+--- !u!58 &8181256075154723452
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583919390110609843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5

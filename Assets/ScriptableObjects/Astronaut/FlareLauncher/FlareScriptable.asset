@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: FlareScriptable
   m_EditorClassIdentifier: 
   distanceCoefficient: 8
+  velocity: 10
+  distanceError: 0.2

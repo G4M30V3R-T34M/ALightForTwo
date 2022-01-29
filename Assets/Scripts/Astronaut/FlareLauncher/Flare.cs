@@ -5,9 +5,12 @@ using UnityEngine;
 public class Flare : PoolableObject
 {
     [SerializeField] FlareScriptable _flare;
+
+    private CircleCollider2D collider;
     // Start is called before the first frame update
     void Start() {
         BadAlienMind.Instance.addLight(gameObject);
+        collider = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -33,5 +36,29 @@ public class Flare : PoolableObject
             BadAlienMind.Instance.removeLight(gameObject);
         }
         base.OnDisable();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
+        if (visibility != null) {
+            visibility.EnterSpotlight();
+            print("Enter");
+            print(collision.gameObject.name);
+            print(visibility.IsVisible);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
+        if (visibility != null) {
+            visibility.ExitSpotlight();
+            print("Exit");
+            print(collision.gameObject.name);
+            print(visibility.IsVisible);
+
+        }
     }
 }
