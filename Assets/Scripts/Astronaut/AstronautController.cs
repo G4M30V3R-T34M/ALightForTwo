@@ -5,6 +5,7 @@ using UnityEngine;
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] AstronautScriptable _astronaut;
+    [SerializeField] public bool IsVisible;
 
     void Update() {
         UpdatePosition();
