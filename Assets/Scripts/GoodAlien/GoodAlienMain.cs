@@ -26,6 +26,19 @@ public class GoodAlienMain : MonoBehaviour
     void Start() {
         freeController.enabled = true;
         holdController.enabled = false;
+
+        visibility.InLight += EnterLight;
+        visibility.OutLight += ExitLight;
+    }
+
+    private void EnterLight() {
+        Debug.Log("EnterLight");
+        // StartHealing
+    }
+    private void ExitLight()
+    {
+        Debug.Log("ExitLight");
+
     }
 
     // TODO :: THIS IS TEMPORARY
@@ -33,6 +46,14 @@ public class GoodAlienMain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             SwitchController();
         }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            visibility.EnterSpotlight();
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            visibility.ExitSpotlight();
+        }
+
     }
 
     public void SwitchController() {
