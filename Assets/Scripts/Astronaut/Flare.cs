@@ -17,7 +17,9 @@ public class Flare : PoolableObject
     }
 
     override protected void OnDisable() {
-        BadAlienMind.Instance.removeLight(gameObject);
+        if (!BadAlienMind.EmptyInstance()) {
+            BadAlienMind.Instance.removeLight(gameObject);
+        }
         base.OnDisable();
     }
 
