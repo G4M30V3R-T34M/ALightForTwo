@@ -9,7 +9,7 @@ public class FlareLauncher : MonoBehaviour
    
     [SerializeField] private bool hasCooldown;
     [SerializeField] private float cooldownTime;
-    private float remainingCooldownTime;
+    public float remainingCooldownTime { get; private set; }
     private Coroutine cooldownCoroutineReference;
 
     private ObjectPool op;
@@ -24,10 +24,8 @@ public class FlareLauncher : MonoBehaviour
     void Update() {
         Vector2 flareDireciton = new Vector2(0, 0);
         float power;
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            switch (currentState)
-            {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            switch (currentState) {
                 case LauncherState.Waiting:
                     waitingActions();
                     break;
@@ -41,8 +39,7 @@ public class FlareLauncher : MonoBehaviour
                 case LauncherState.Cooldown:
                     break;
             }
-        }
-        
+        } 
     }
 
     private void waitingActions() {
@@ -82,10 +79,6 @@ public class FlareLauncher : MonoBehaviour
         }
         currentState = LauncherState.Waiting;
         cooldownCoroutineReference = null;
-    }
-
-    public float GetRemainingCooldownTime() {
-        return remainingCooldownTime;
     }
 
     public void Launch(Vector2 direction, float power) {
