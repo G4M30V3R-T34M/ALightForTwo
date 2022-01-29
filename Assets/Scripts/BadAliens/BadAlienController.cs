@@ -2,16 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(HealthManager))]
 public class BadAlienController : PoolableObject
 {
     enum TargetType {Light, Astronaut}
     [SerializeField] BadAlienScriptable alien;
+    
+    HealthManager healthManager;
 
     private GameObject currentTarget;
     private TargetType targetType;
 
     float afraidTime;
     Vector2 fearPoint;
+
+    private void Awake()
+    {
+        healthManager = GetComponent<HealthManager>();
+    }
+
+    private void Start()
+    {
+        InitHealthManager();
+    }
+
+    private void InitHealthManager()
+    {
+        healthManager.SetUp(alien.health);
+        healthManager.NoHealth += Die;
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false);
+    }
 
     void OnEnable() {
         StartCoroutine(FetchEnvironmentCoroutine());

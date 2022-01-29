@@ -19,4 +19,7 @@ public class AstronautScriptable : ScriptableObject
 
     [Range(0, 20)]
     public float bostVelocity;
+
+    [Range(0, 10)]
+    public int health;
 }

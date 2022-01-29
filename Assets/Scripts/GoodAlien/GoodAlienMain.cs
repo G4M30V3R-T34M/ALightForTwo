@@ -7,9 +7,11 @@ using UnityEngine;
 [RequireComponent(typeof(GA_Movement))]
 [RequireComponent(typeof(GA_Shout))]
 [RequireComponent(typeof(VisibilityInteraction))]
+[RequireComponent(typeof(HealthManager))]
 public class GoodAlienMain : MonoBehaviour
 {
     VisibilityInteraction visibility;
+    HealthManager healthManager;
     public bool IsVisible { get { return visibility.IsVisible; } }
 
     [SerializeField] GoodAlienScriptable _alien ;
@@ -19,9 +21,11 @@ public class GoodAlienMain : MonoBehaviour
     GAHold_Controller holdController;
 
     public bool isFree { get { return freeController.isActiveAndEnabled; } }
+    Coroutine healingCoroutineReference;
 
     private void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
+        healthManager = GetComponent<HealthManager>();
         freeController = GetComponent<GAFree_Controller>();
         holdController = GetComponent<GAHold_Controller>();
     }
@@ -32,16 +36,30 @@ public class GoodAlienMain : MonoBehaviour
 
         visibility.InLight += EnterLight;
         visibility.OutLight += ExitLight;
+
+        InitHealthManager();
+    }
+    private void InitHealthManager() {
+        healthManager.SetUp(_alien.health);
+        healthManager.NoHealth += Die;
+    }
+
+    private void Die() {
+        // Alien Dies
     }
 
     private void EnterLight() {
         Debug.Log("EnterLight");
-        // StartHealing
+        if (healingCoroutineReference != null) {
+            StopCoroutine(healingCoroutineReference);
+        }
     }
     private void ExitLight()
     {
         Debug.Log("ExitLight");
-
+        if (healingCoroutineReference != null) {
+            healingCoroutineReference = StartCoroutine(Healing());
+        }
     }
 
     // TODO :: THIS IS TEMPORARY
@@ -49,19 +67,19 @@ public class GoodAlienMain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             SwitchController();
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
-            visibility.EnterSpotlight();
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            visibility.ExitSpotlight();
-        }
-
     }
 
     public void SwitchController() {
         freeController.enabled = !freeController.isActiveAndEnabled;
         holdController.enabled = !holdController.isActiveAndEnabled;
+    }
+
+    private IEnumerator Healing()
+    {
+        while(healthManager.CanHeal()) {
+            healthManager.Heal(_alien.HealValue);
+            yield return null;
+        }
     }
 
 }
