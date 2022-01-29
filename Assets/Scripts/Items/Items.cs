@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(VisibilityInteraction))]
 public class Items : MonoBehaviour
 {
-    public bool isVisible { get; private set; }
-    void Start() {
-        isVisible = false;
+    private VisibilityInteraction visibility;
+    public bool isVisible { get { return visibility.IsVisible; } }
+
+    private void Awake()
+    {
+        visibility = GetComponent<VisibilityInteraction>();
     }
 
-    public void MakeObjectVisible() {
-        isVisible = true;
-    }
 }

@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AstronautMovement))]
+[RequireComponent(typeof(VisibilityInteraction))]
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] AstronautScriptable _astronaut;
-    [SerializeField] public bool isVisible;
+    private VisibilityInteraction visibility;
+    public bool isVisible { get { return visibility.IsVisible; } }
 
     private Coroutine pickUpCoroutineReference;
     private float remainingPickUpTime;
 
     private bool pickableObject;
     GameObject objectToPick;
+
+    private void Awake()
+    {
+        visibility = GetComponent<VisibilityInteraction>();
+    }
 
     public void Update() {
         if (pickableObject && IsTryingToPickUp()) {

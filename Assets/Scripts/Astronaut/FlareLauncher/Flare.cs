@@ -29,15 +29,36 @@ public class Flare : PoolableObject
         while(Vector2.Distance(transform.position, target) >= _flare.distanceError) {
             transform.position = Vector2.MoveTowards(transform.position, target, _flare.velocity * Time.deltaTime);
             yield return null;
-            print(Vector2.Distance(transform.position, target));
-            print(_flare.distanceError);
         }
-        collider.enabled = true;
     }
     override protected void OnDisable() {
         if (!BadAlienMind.EmptyInstance()) {
             BadAlienMind.Instance.removeLight(gameObject);
         }
         base.OnDisable();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
+        if (visibility != null) {
+            visibility.EnterSpotlight();
+            print("Enter");
+            print(collision.gameObject.name);
+            print(visibility.IsVisible);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
+        if (visibility != null) {
+            visibility.ExitSpotlight();
+            print("Exit");
+            print(collision.gameObject.name);
+            print(visibility.IsVisible);
+
+        }
     }
 }
