@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 768119773}
   - component: {fileID: 768119772}
   - component: {fileID: 768119771}
-  - component: {fileID: 768119774}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -155,7 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 8
-  op: {fileID: 0}
 --- !u!212 &768119772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -221,13 +219,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &768119774
+--- !u!1 &1664570547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664570550}
+  - component: {fileID: 1664570549}
+  - component: {fileID: 1664570548}
+  m_Layer: 0
+  m_Name: FlareLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1664570548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768119770}
+  m_GameObject: {fileID: 1664570547}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42e595183eecea74782d5de12fe15632, type: 3}
@@ -236,6 +252,34 @@ MonoBehaviour:
   poolSize: 30
   prefab: {fileID: 9063734801908175779, guid: ba78e101671cfab46ac2cb0bda15a9a6, type: 3}
   pool: []
+--- !u!114 &1664570549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664570547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ab3e78fb76fbf4f805cd5e8fe534a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasCooldown: 1
+  cooldownTime: 10
+--- !u!4 &1664570550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664570547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71950877, y: -0.40532205, z: -10.460856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851093420
 GameObject:
   m_ObjectHideFlags: 0

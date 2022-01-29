@@ -5,10 +5,8 @@ using UnityEngine;
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] private float velocity;
-    [SerializeField] private ObjectPool op;
     
     void Start() {
-        op = gameObject.GetComponent<ObjectPool>();
     }
 
     void Update() {

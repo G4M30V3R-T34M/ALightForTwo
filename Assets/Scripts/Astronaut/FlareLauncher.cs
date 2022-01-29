@@ -5,14 +5,16 @@ using UnityEngine;
 public class FlareLauncher : MonoBehaviour
 {
     private enum LauncherState {Waiting, ChosingDirection, ChosingPower, Cooldown};
-
     private LauncherState currentState = LauncherState.Waiting;
+   
     [SerializeField] private bool hasCooldown;
     [SerializeField] private float cooldownTime;
     private float remainingCooldownTime;
     private Coroutine cooldownCoroutineReference;
+
+    private ObjectPool op;
     void Start() {
-        
+        op = gameObject.GetComponent<ObjectPool>();
     }
 
     // Update is called once per frame
@@ -46,13 +48,17 @@ public class FlareLauncher : MonoBehaviour
     }
 
     private void ChosingPowerActions() {
+        // get power value from game object
+
+        //Launch(new Vector2(dirX, dirY), power);
         if (hasCooldown) {
-            currentState =LauncherState.Cooldown;
+            currentState = LauncherState.Cooldown;
             if (cooldownCoroutineReference == null) {
                 cooldownCoroutineReference = StartCoroutine(cooldownCoroutine());
             }
+        } else {
+            currentState = LauncherState.Waiting;
         }
-        
     }
 
     private IEnumerator cooldownCoroutine() {
