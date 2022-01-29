@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f72003c287785f40879f913e2687eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _astronaut: {fileID: 0}
+  _astronaut: {fileID: 11400000, guid: 695460efd29f6b84c96c46e5a22331db, type: 2}
 --- !u!1 &788721934
 GameObject:
   m_ObjectHideFlags: 0
