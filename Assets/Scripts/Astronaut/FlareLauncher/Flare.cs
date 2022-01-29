@@ -17,15 +17,14 @@ public class Flare : PoolableObject
 
     public void Launch(Vector3 direction, float power) {
         Vector3 target = direction * power * _flare.distanceCoefficient;
+        target += transform.position;
         StartCoroutine(GoToPosition(target));
     }
 
     private IEnumerator GoToPosition(Vector3 target)
     {
         while(Vector2.Distance(transform.position, target) >= _flare.distanceError) {
-            print(target);
-            print(_flare.velocity * Time.deltaTime);
-            Vector2.MoveTowards(transform.position, target, _flare.velocity * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target, _flare.velocity * Time.deltaTime);
             yield return null;
         }
     }
