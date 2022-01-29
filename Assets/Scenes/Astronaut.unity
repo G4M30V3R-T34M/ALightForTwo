@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 768119773}
   - component: {fileID: 768119772}
   - component: {fileID: 768119771}
+  - component: {fileID: 768119774}
   m_Layer: 0
   m_Name: Astronaut
   m_TagString: Untagged
@@ -154,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 8
+  op: {fileID: 0}
 --- !u!212 &768119772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,6 +221,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768119774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768119770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e595183eecea74782d5de12fe15632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolSize: 30
+  prefab: {fileID: 9063734801908175779, guid: ba78e101671cfab46ac2cb0bda15a9a6, type: 3}
+  pool: []
 --- !u!1 &1851093420
 GameObject:
   m_ObjectHideFlags: 0
