@@ -6,7 +6,7 @@ public class Items : MonoBehaviour
 {
     public bool isVisible { get; private set; }
     void Start() {
-        isVisible = true;
+        isVisible = false;
     }
 
     public void MakeObjectVisible() {

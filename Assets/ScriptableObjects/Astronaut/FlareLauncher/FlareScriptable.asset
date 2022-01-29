@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceCoefficient: 8
   velocity: 10
-  distanceError: 0
+  distanceError: 0.2
