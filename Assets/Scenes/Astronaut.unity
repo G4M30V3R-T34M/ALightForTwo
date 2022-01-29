@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2dd29c52405a74da63e49159b44832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angularVelocity: 80
+  _bar: {fileID: 11400000, guid: 4fab81da4aaade941ad6a6f218c3b5dc, type: 2}
 --- !u!1 &768119770
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fe6229bb05efb4a9fe604ff7b8a0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 8
+  _astronaut: {fileID: 11400000, guid: 695460efd29f6b84c96c46e5a22331db, type: 2}
 --- !u!212 &768119772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -622,6 +622,10 @@ PrefabInstance:
       propertyPath: powerBar
       value: 
       objectReference: {fileID: 896282636}
+    - target: {fileID: 3557134841223578306, guid: 3a696c5ed1114724da415747245de158, type: 3}
+      propertyPath: _launcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 9029498292a523340bdae913398c62ee, type: 2}
     - target: {fileID: 3557134841223578306, guid: 3a696c5ed1114724da415747245de158, type: 3}
       propertyPath: directionBar
       value: 

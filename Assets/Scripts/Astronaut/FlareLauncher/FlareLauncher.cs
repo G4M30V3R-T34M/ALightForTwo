@@ -6,9 +6,8 @@ public class FlareLauncher : MonoBehaviour
 {
     private enum LauncherState {Waiting, ChosingDirection, ChosingPower, Cooldown};
     private LauncherState currentState = LauncherState.Waiting;
-   
-    [SerializeField] private bool hasCooldown;
-    [SerializeField] private float cooldownTime;
+
+    [SerializeField] FlareLauncherScriptable _launcher;
     public float remainingCooldownTime { get; private set; }
     private Coroutine cooldownCoroutineReference;
 
@@ -60,7 +59,7 @@ public class FlareLauncher : MonoBehaviour
     private float ChosingPowerActions() {
         float power = powerBar.transform.localScale.y;
         powerBar.SetActive(false);
-        if (hasCooldown) {
+        if (_launcher.hasCooldown) {
             currentState = LauncherState.Cooldown;
             if (cooldownCoroutineReference == null) {
                 cooldownCoroutineReference = StartCoroutine(cooldownCoroutine());
@@ -72,7 +71,7 @@ public class FlareLauncher : MonoBehaviour
     }
 
     private IEnumerator cooldownCoroutine() {
-        remainingCooldownTime = cooldownTime;
+        remainingCooldownTime = _launcher.cooldownTime;
         while (remainingCooldownTime > 0) {
             remainingCooldownTime -= Time.deltaTime;
             yield return null;

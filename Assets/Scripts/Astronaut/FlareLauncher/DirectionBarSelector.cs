@@ -5,15 +5,12 @@ using UnityEngine;
 public class DirectionBarSelector : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float angularVelocity;
-    void Start()
-    {
-    }
+    [SerializeField] DirectionBarScriptable _bar;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, -angularVelocity * Time.deltaTime);
+        transform.Rotate(0, 0, -_bar.angularVelocity * Time.deltaTime);
     }
 
     public void ResetRotation()
