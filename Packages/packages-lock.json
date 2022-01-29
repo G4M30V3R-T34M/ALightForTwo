@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.neengash.unitypow": {
-      "version": "https://github.com/Neengash/Unity-POW.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "aef17644d996f55502f5d0472054f30fd545bb1a"
-    },
     "com.unity.2d.animation": {
       "version": "5.0.5",
       "depth": 0,
