@@ -6,11 +6,14 @@ public class FlareLauncher : MonoBehaviour
 {
     private enum LauncherState {Waiting, ChosingDirection, ChosingPower, Cooldown};
     private LauncherState currentState = LauncherState.Waiting;
-   
-    [SerializeField] private bool hasCooldown;
-    [SerializeField] private float cooldownTime;
+
+    [SerializeField] FlareLauncherScriptable _launcher;
     public float remainingCooldownTime { get; private set; }
     private Coroutine cooldownCoroutineReference;
+
+
+    private Vector3 flareDireciton = new Vector3(0, 0, 0);
+    private float power;
 
     private ObjectPool op;
     [SerializeField] GameObject directionBar;
@@ -22,8 +25,6 @@ public class FlareLauncher : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Vector2 flareDireciton = new Vector2(0, 0);
-        float power;
         if (Input.GetKeyDown(KeyCode.E)) {
             switch (currentState) {
                 case LauncherState.Waiting:
@@ -50,17 +51,18 @@ public class FlareLauncher : MonoBehaviour
 
     private Vector2 ChosingDirectionActions() {
         Quaternion flareRotation = directionBar.transform.rotation;
+        Vector3 direction = directionBar.GetComponent<DirectionBarSelector>().GetNormalizedDirection();
         directionBar.SetActive(false);
         powerBar.SetActive(true);
         powerBar.GetComponent<PowerBarSelector>().ResetPower(flareRotation);
         currentState = LauncherState.ChosingPower;
-        return new Vector2(0, 0); // TODO change
+        return direction;
     }
 
     private float ChosingPowerActions() {
         float power = powerBar.transform.localScale.y;
         powerBar.SetActive(false);
-        if (hasCooldown) {
+        if (_launcher.hasCooldown) {
             currentState = LauncherState.Cooldown;
             if (cooldownCoroutineReference == null) {
                 cooldownCoroutineReference = StartCoroutine(cooldownCoroutine());
@@ -72,7 +74,7 @@ public class FlareLauncher : MonoBehaviour
     }
 
     private IEnumerator cooldownCoroutine() {
-        remainingCooldownTime = cooldownTime;
+        remainingCooldownTime = _launcher.cooldownTime;
         while (remainingCooldownTime > 0) {
             remainingCooldownTime -= Time.deltaTime;
             yield return null;
@@ -81,7 +83,10 @@ public class FlareLauncher : MonoBehaviour
         cooldownCoroutineReference = null;
     }
 
-    public void Launch(Vector2 direction, float power) {
-        Debug.Log("Launched");
+    public void Launch(Vector3 direction, float power) {
+        Flare flare = (Flare)op.getNext();
+        flare.gameObject.SetActive(true);
+        flare.transform.position = this.transform.position;
+        flare.GetComponent<Flare>().Launch(direction, power);
     }
 }
