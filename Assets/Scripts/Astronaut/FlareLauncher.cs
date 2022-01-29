@@ -13,13 +13,18 @@ public class FlareLauncher : MonoBehaviour
     private Coroutine cooldownCoroutineReference;
 
     private ObjectPool op;
+    [SerializeField] GameObject directionBar;
+    [SerializeField] GameObject powerBar;
+
     void Start() {
         op = gameObject.GetComponent<ObjectPool>();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetAxisRaw("FlareLaunch") > 0)
+        Vector2 flareDireciton = new Vector2(0, 0);
+        float power;
+        if (Input.GetKeyDown(KeyCode.E))
         {
             switch (currentState)
             {
@@ -27,10 +32,11 @@ public class FlareLauncher : MonoBehaviour
                     waitingActions();
                     break;
                 case LauncherState.ChosingDirection:
-                    ChosingDirectionActions();
+                    flareDireciton = ChosingDirectionActions();
                     break;
                 case LauncherState.ChosingPower:
-                    ChosingPowerActions();
+                    power = ChosingPowerActions();
+                    Launch(flareDireciton, power);
                     break;
                 case LauncherState.Cooldown:
                     break;
@@ -41,16 +47,22 @@ public class FlareLauncher : MonoBehaviour
 
     private void waitingActions() {
         currentState = LauncherState.ChosingDirection;
+        directionBar.SetActive(true);
+        directionBar.GetComponent<DirectionBarSelector>().ResetRotation();
     }
 
-    private void ChosingDirectionActions() {
+    private Vector2 ChosingDirectionActions() {
+        Quaternion flareRotation = directionBar.transform.rotation;
+        directionBar.SetActive(false);
+        powerBar.SetActive(true);
+        powerBar.GetComponent<PowerBarSelector>().ResetPower(flareRotation);
         currentState = LauncherState.ChosingPower;
+        return new Vector2(0, 0); // TODO change
     }
 
-    private void ChosingPowerActions() {
-        // get power value from game object
-
-        //Launch(new Vector2(dirX, dirY), power);
+    private float ChosingPowerActions() {
+        float power = powerBar.transform.localScale.y;
+        powerBar.SetActive(false);
         if (hasCooldown) {
             currentState = LauncherState.Cooldown;
             if (cooldownCoroutineReference == null) {
@@ -59,6 +71,7 @@ public class FlareLauncher : MonoBehaviour
         } else {
             currentState = LauncherState.Waiting;
         }
+        return power;
     }
 
     private IEnumerator cooldownCoroutine() {
@@ -76,6 +89,6 @@ public class FlareLauncher : MonoBehaviour
     }
 
     public void Launch(Vector2 direction, float power) {
-
+        Debug.Log("Launched");
     }
 }
