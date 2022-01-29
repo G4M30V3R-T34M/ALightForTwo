@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: AstronautScriptable
   m_EditorClassIdentifier: 
   velocity: 8
+  pickUpTime: 2

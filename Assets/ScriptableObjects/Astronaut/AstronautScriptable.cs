@@ -7,4 +7,7 @@ public class AstronautScriptable : ScriptableObject
 {
     [Range(0, 15)]
     public float velocity;
+
+    [Range(0, 10)]
+    public float pickUpTime;
 }
