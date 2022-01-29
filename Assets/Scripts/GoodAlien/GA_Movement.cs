@@ -12,7 +12,7 @@ public class GA_Movement : MonoBehaviour
     GoodAlienScriptable alien;
 
     void Awake() {
-        alien = GetComponent<GA_Controller>().Alien;
+        alien = GetComponent<GoodAlienMain>().Alien;
     }
 
     public void MoveTowards(Vector2 point) {

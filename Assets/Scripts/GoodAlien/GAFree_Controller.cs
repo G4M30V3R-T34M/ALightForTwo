@@ -1,11 +1,7 @@
 using UnityEngine;
 
-[RequireComponent(typeof(GA_Movement))]
-public class GA_Controller : MonoBehaviour
+public class GAFree_Controller : MonoBehaviour
 {
-    [SerializeField] GoodAlienScriptable _alien ;
-    public GoodAlienScriptable Alien { get { return _alien; } }
-
     GA_Movement gaMovement;
 
     void Awake() {
@@ -13,6 +9,7 @@ public class GA_Controller : MonoBehaviour
     }
 
     void Update() {
+        Debug.Log("Free");
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             RaycastHit2D hit = GetMainHit(hits);
@@ -44,8 +41,7 @@ public class GA_Controller : MonoBehaviour
         return false;
     }
 
-    private void StartAction(RaycastHit2D hit)
-    {
+    private void StartAction(RaycastHit2D hit) {
         if (hit.collider.gameObject.layer == (int)Layers.BadAlien) {
             gaMovement.AttackEnemy(hit.collider.gameObject);
         } else if (hit.collider.gameObject.layer == (int)Layers.Flare) {
