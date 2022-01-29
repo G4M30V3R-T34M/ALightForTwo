@@ -11,6 +11,10 @@ public class FlareLauncher : MonoBehaviour
     public float remainingCooldownTime { get; private set; }
     private Coroutine cooldownCoroutineReference;
 
+
+    private Vector3 flareDireciton = new Vector3(0, 0, 0);
+    private float power;
+
     private ObjectPool op;
     [SerializeField] GameObject directionBar;
     [SerializeField] GameObject powerBar;
@@ -21,8 +25,6 @@ public class FlareLauncher : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        Vector2 flareDireciton = new Vector2(0, 0);
-        float power;
         if (Input.GetKeyDown(KeyCode.E)) {
             switch (currentState) {
                 case LauncherState.Waiting:
@@ -49,11 +51,12 @@ public class FlareLauncher : MonoBehaviour
 
     private Vector2 ChosingDirectionActions() {
         Quaternion flareRotation = directionBar.transform.rotation;
+        Vector3 direction = directionBar.GetComponent<DirectionBarSelector>().GetNormalizedDirection();
         directionBar.SetActive(false);
         powerBar.SetActive(true);
         powerBar.GetComponent<PowerBarSelector>().ResetPower(flareRotation);
         currentState = LauncherState.ChosingPower;
-        return new Vector2(0, 0); // TODO change
+        return direction;
     }
 
     private float ChosingPowerActions() {
@@ -80,7 +83,9 @@ public class FlareLauncher : MonoBehaviour
         cooldownCoroutineReference = null;
     }
 
-    public void Launch(Vector2 direction, float power) {
+    public void Launch(Vector3 direction, float power) {
         Debug.Log("Launched");
+        Debug.Log(direction);
+        Debug.Log(power);
     }
 }

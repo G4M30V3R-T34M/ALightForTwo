@@ -17,4 +17,15 @@ public class DirectionBarSelector : MonoBehaviour
     {
         transform.rotation = new Quaternion(0, 0, 0, 0);
     }
+
+    public Vector3 GetNormalizedDirection()
+    {
+        float radians = ToRadians(transform.rotation.eulerAngles.z);
+        return new Vector3(Mathf.Cos(radians), Mathf.Sin(radians), 0);
+    }
+
+    private float ToRadians(float degrees)
+    {
+        return degrees * Mathf.PI / 180f;
+    }
 }

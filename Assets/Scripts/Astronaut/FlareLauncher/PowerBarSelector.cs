@@ -20,7 +20,6 @@ public class PowerBarSelector : MonoBehaviour
         if (transform.localScale.y >= _bar.maxLength || transform.localScale.y <= _bar.minLength)
         {
             _bar.powerBarSpeed *= -1;
-            print(_bar.powerBarSpeed);
         }
     }
 
