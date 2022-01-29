@@ -10,11 +10,13 @@ public class BadAlienController : PoolableObject
     private GameObject currentTarget;
     private TargetType targetType;
 
-    void Start() {
+    void OnEnable() {
         StartCoroutine(FetchEnvironmentCoroutine());
     }
 
     void Update() {
+        if (currentTarget == null) { return; }
+
         if (Vector2.Distance(currentTarget.transform.position, transform.position) < alien.interactionDistance) {
             InteractWithTarget();
         } else {

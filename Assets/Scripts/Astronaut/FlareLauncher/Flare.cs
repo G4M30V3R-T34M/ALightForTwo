@@ -7,7 +7,7 @@ public class Flare : PoolableObject
     [SerializeField] FlareScriptable _flare;
     // Start is called before the first frame update
     void Start() {
-        
+        BadAlienMind.Instance.addLight(gameObject);
     }
 
     // Update is called once per frame
@@ -27,5 +27,11 @@ public class Flare : PoolableObject
             transform.position = Vector2.MoveTowards(transform.position, target, _flare.velocity * Time.deltaTime);
             yield return null;
         }
+    }
+    override protected void OnDisable() {
+        if (!BadAlienMind.EmptyInstance()) {
+            BadAlienMind.Instance.removeLight(gameObject);
+        }
+        base.OnDisable();
     }
 }
