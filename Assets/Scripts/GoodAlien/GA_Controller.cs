@@ -1,38 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
+[RequireComponent(typeof(GA_Movement))]
 public class GA_Controller : MonoBehaviour
 {
-    [SerializeField] GoodAlienScriptable alien;
-    Vector2 Destination;
-    Coroutine activeDestinationCoroutine;
+    [SerializeField] GoodAlienScriptable _alien ;
+    public GoodAlienScriptable Alien { get { return _alien; } }
 
-    void Start() {
-        Destination = new Vector2(0,0);
+    GA_Movement gaMovement;
+
+    void Awake() {
+        gaMovement = GetComponent<GA_Movement>();
     }
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            Destination = hit.point;
-            Debug.Log($"Destination ({Destination.x}, {Destination.y})");
-            if (activeDestinationCoroutine == null) {
-                activeDestinationCoroutine = StartCoroutine(DestinationCoroutine());
-            }
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = GetMainHit(hits);
+            StartAction(hit);
         }
     }
 
-    IEnumerator DestinationCoroutine()
+    private RaycastHit2D GetMainHit(RaycastHit2D[] hits)
     {
-        while (Vector2.Distance(Destination, (Vector2)transform.position) >= alien.interactDistance)
-        {
-            Vector2 trans = Destination - (Vector2)transform.position;
-            trans.Normalize();
-            trans *= alien.Speed * Time.deltaTime;
-            transform.Translate(trans);
-            yield return null;
+        RaycastHit2D currentHit;
+
+        if (TryGetLayerHit(hits, Layers.BadAlien, out currentHit)) { return currentHit; }
+        if (TryGetLayerHit(hits, Layers.Flare, out currentHit)) { return currentHit; }
+        if (TryGetLayerHit(hits, Layers.Scenario, out currentHit)) { return currentHit; }
+
+        Debug.LogError("Didn't find any objective for Good Alien Action");
+        return currentHit; // first hit in the array
+    }
+
+    private bool TryGetLayerHit(RaycastHit2D[] hits, Layers layer, out RaycastHit2D outHit)
+    {
+        foreach (RaycastHit2D hit in hits) {
+            if (hit.collider.gameObject.layer == (int)layer) {
+                outHit = hit;
+                return true;
+            }
         }
-        activeDestinationCoroutine = null;
+        outHit = hits[0];
+        return false;
+    }
+
+    private void StartAction(RaycastHit2D hit)
+    {
+        if (hit.collider.gameObject.layer == (int)Layers.BadAlien) {
+            gaMovement.AttackEnemy(hit.collider.gameObject);
+        } else if (hit.collider.gameObject.layer == (int)Layers.Flare) {
+            gaMovement.EatFlare(hit.collider.gameObject);
+        } else {
+            gaMovement.MoveTowards(hit.point);
+        }
     }
 }
