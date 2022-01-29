@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GA_Controller : MonoBehaviour
 {
-    [SerializeField] AlienScriptable alien;
+    [SerializeField] GoodAlienScriptable alien;
     Vector2 Destination;
     Coroutine activeDestinationCoroutine;
 
@@ -15,24 +15,23 @@ public class GA_Controller : MonoBehaviour
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.collider != null) {
-                Destination = hit.point;
-                if (activeDestinationCoroutine == null) {
-                    activeDestinationCoroutine = StartCoroutine(DestinationCoroutine());
-                }
-                Debug.Log(hit.point);
+            Destination = hit.point;
+            Debug.Log($"Destination ({Destination.x}, {Destination.y})");
+            if (activeDestinationCoroutine == null) {
+                activeDestinationCoroutine = StartCoroutine(DestinationCoroutine());
             }
         }
     }
 
     IEnumerator DestinationCoroutine()
     {
-        while (Vector2.Distance(Destination, new Vector2(transform.position.x, transform.position.y)) >= 1)
+        while (Vector2.Distance(Destination, (Vector2)transform.position) >= alien.interactDistance)
         {
+            Vector2 trans = Destination - (Vector2)transform.position;
+            trans.Normalize();
+            trans *= alien.Speed * Time.deltaTime;
+            transform.Translate(trans);
             yield return null;
-            Vector2 trans = Destination - new Vector2(transform.position.x, transform.position.y);
-            trans = trans.normalized;
-            transform.Translate(new Vector2(trans.x * alien.Speed * Time.deltaTime, trans.y * alien.Speed * Time.deltaTime));
         }
         activeDestinationCoroutine = null;
     }
