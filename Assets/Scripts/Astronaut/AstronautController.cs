@@ -5,9 +5,6 @@ using UnityEngine;
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] private float velocity;
-    
-    void Start() {
-    }
 
     void Update() {
         UpdatePosition();

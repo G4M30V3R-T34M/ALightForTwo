@@ -11,8 +11,7 @@ public class PowerBarSelector : MonoBehaviour
     private Vector2 defaultScale;
 
     [SerializeField] private GameObject powerBar;
-    void Start()
-    {
+    void Start() {
         defaultScale = new Vector2(1, minLength);
         transform.localScale = defaultScale;
     }
