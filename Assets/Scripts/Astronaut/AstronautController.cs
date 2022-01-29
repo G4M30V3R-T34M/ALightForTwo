@@ -6,7 +6,7 @@ using UnityEngine;
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] AstronautScriptable _astronaut;
-    [SerializeField] public bool IsVisible;
+    [SerializeField] public bool isVisible;
 
     private Coroutine pickUpCoroutineReference;
     private float remainingPickUpTime;
