@@ -10,11 +10,28 @@ public class BadAlienController : PoolableObject
     private GameObject currentTarget;
     private TargetType targetType;
 
+    float afraidTime;
+    Vector2 fearPoint;
+
     void OnEnable() {
         StartCoroutine(FetchEnvironmentCoroutine());
+        afraidTime = 0;
     }
 
     void Update() {
+        if (afraidTime > 0) {
+            afraidTime -= Time.deltaTime;
+            AfraidUpdate();
+        } else {
+            FreeUpdate();
+        }
+    }
+
+    private void AfraidUpdate() {
+        MoveAwayFromFear();
+    }
+
+    private void FreeUpdate() {
         if (currentTarget == null) { return; }
 
         if (Vector2.Distance(currentTarget.transform.position, transform.position) < alien.interactionDistance) {
@@ -63,6 +80,13 @@ public class BadAlienController : PoolableObject
         return closestLight;
     }
 
+    private void MoveAwayFromFear() {
+        Vector2 translate = (Vector2)transform.position - fearPoint;
+        translate.Normalize();
+        translate *= alien.fearSpeed * Time.deltaTime;
+        transform.Translate(translate);
+    }
+
     private void InteractWithTarget() {
         // TODO
         Debug.Log("ALIEN ATTACK / DETROY LIGHT");
@@ -73,5 +97,12 @@ public class BadAlienController : PoolableObject
         translate.Normalize();
         translate *= alien.speed * Time.deltaTime;
         transform.Translate(translate);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.layer == (int)Layers.GoodAlienShout) {
+            fearPoint = collision.gameObject.transform.position;
+            afraidTime = alien.loseControllTime;
+        }
     }
 }
