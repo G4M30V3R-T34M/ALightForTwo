@@ -5,12 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(AstronautMovement))]
 [RequireComponent(typeof(VisibilityInteraction))]
 [RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(AstroAnimationController))]
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] AstronautScriptable _astronaut;
     private VisibilityInteraction visibility;
     private HealthManager healthManager;
     private AstronautMovement astronautMovement;
+    AstroAnimationController animator;
 
     public bool isVisible { get { return visibility.IsVisible; } }
 
@@ -24,6 +26,7 @@ public class AstronautController : MonoBehaviour
         visibility = GetComponent<VisibilityInteraction>();
         healthManager = GetComponent<HealthManager>();
         astronautMovement = GetComponent<AstronautMovement>();
+        animator = GetComponent<AstroAnimationController>();
     }
 
     private void Start() {
@@ -46,6 +49,7 @@ public class AstronautController : MonoBehaviour
     public void Update() {
         //Debug.Log($"Astronaut is visible {isVisible}");
         if (pickableObject && IsTryingToPickUp()) {
+            animator.Pick();
             pickUpCoroutineReference = StartCoroutine(PickUpItem());
         }
     }
@@ -91,6 +95,8 @@ public class AstronautController : MonoBehaviour
         objectToPick.gameObject.GetComponent<Item>().DoAction(gameObject);
         Destroy(objectToPick);
         objectToPick = null;
+        animator.Stop();
+        animator.SetNextState();
     }
 
     public void RestoreVelocity() {

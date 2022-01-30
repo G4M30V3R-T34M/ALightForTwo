@@ -41,6 +41,7 @@ public class GA_AnimationController : MonoBehaviour
             currentState== GA_AnimStates.Movement
         ) {
             animator.SetInteger(KEY_STATE, (int)GA_AnimStates.Movement);
+            currentState = GA_AnimStates.Movement;
         } else {
             nextState = GA_AnimStates.Movement;
         }
@@ -52,15 +53,18 @@ public class GA_AnimationController : MonoBehaviour
 
     public void Attack() {
         animator.SetInteger(KEY_STATE, (int)GA_AnimStates.Atk);
+        currentState = GA_AnimStates.Atk;
     }
 
     public void Shout () {
         nextState = (GA_AnimStates)animator.GetInteger(KEY_STATE);
         animator.SetInteger(KEY_STATE, (int)GA_AnimStates.Shout);
+        currentState = GA_AnimStates.Shout;
     }
 
     public void Die() {
         animator.SetInteger(KEY_STATE, (int)GA_AnimStates.Death);
+        currentState = GA_AnimStates.Death;
     }
 
     public void SetNextState() {

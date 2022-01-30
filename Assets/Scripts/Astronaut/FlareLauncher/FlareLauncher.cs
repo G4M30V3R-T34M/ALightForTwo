@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlareLauncher : MonoBehaviour
 {
+    [SerializeField] AstroAnimationController animator;
     private enum LauncherState {Waiting, ChosingDirection, ChosingPower, Cooldown};
     private LauncherState currentState = LauncherState.Waiting;
 
@@ -36,6 +37,7 @@ public class FlareLauncher : MonoBehaviour
                 case LauncherState.ChosingPower:
                     power = ChosingPowerActions();
                     Launch(flareDireciton, power);
+                    animator.Throw();
                     break;
                 case LauncherState.Cooldown:
                     break;
