@@ -59,10 +59,7 @@ public class Flare : PoolableObject
         VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
         if (visibility != null) {
             visibility.EnterSpotlight();
-            print("Enter");
-            print(collision.gameObject.name);
-            print(visibility.IsVisible);
-
+            Debug.Log($"Enter {collision.gameObject.name} - {visibility.IsVisible}");
         }
     }
 
@@ -71,10 +68,7 @@ public class Flare : PoolableObject
         VisibilityInteraction visibility = collision.gameObject.GetComponent<VisibilityInteraction>();
         if (visibility != null) {
             visibility.ExitSpotlight();
-            print("Exit");
-            print(collision.gameObject.name);
-            print(visibility.IsVisible);
-
+            Debug.Log($"Enter {collision.gameObject.name} - {visibility.IsVisible}");
         }
     }
 }

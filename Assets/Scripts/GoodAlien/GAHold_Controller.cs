@@ -18,7 +18,6 @@ public class GAHold_Controller : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log("Hold");
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             gaMovement.MoveTowards(hit.point);

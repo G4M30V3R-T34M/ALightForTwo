@@ -22,17 +22,26 @@ public class DontGoAlone : MonoBehaviour
         health = GetComponent<HealthManager>();
 
         transform.position = astronaut.transform.position;
-        transform.parent = astronaut.transform;
         currentStatus = Status.Astronaut;
     }
 
     private void Update() {
+        UpdatePosition();
         if (currentStatus == Status.Astronaut || currentStatus == Status.Alien) {
             if (Input.GetKeyDown(KeyCode.Return)) {
-                transform.parent = null; // TODO :: NOT SURE
                 StartSwitch();
             }
         }
+    }
+
+    private void UpdatePosition()
+    {
+        if (currentStatus == Status.Astronaut) {
+            transform.position = astronaut.transform.position;
+        } else if (currentStatus == Status.Alien) {
+            transform.position = alien.transform.position;
+        }
+
     }
 
     private void StartSwitch() {
@@ -62,18 +71,17 @@ public class DontGoAlone : MonoBehaviour
         }
 
         transform.position = destination.transform.position;
-        transform.parent = destination.transform;
         EndSwitch();
     }
 
     private void EndSwitch() {
-        health.isProtected = false;
         if (currentStatus == Status.TravelToAlien) {
             currentStatus = Status.Alien;
             alien.SwitchController();
             flare.localScale = new Vector3(1, 1, 1);
         } else {
             currentStatus = Status.Astronaut;
+            health.isProtected = false;
             // TODO :: ASTRONAUT -- Switch activate dontGoAloneSprites
         }
     }

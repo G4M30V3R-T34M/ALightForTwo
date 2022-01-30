@@ -44,6 +44,7 @@ public class AstronautController : MonoBehaviour
     }
 
     public void Update() {
+        //Debug.Log($"Astronaut is visible {isVisible}");
         if (pickableObject && IsTryingToPickUp()) {
             pickUpCoroutineReference = StartCoroutine(PickUpItem());
         }
