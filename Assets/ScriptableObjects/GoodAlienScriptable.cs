@@ -35,4 +35,7 @@ public class GoodAlienScriptable : ScriptableObject
 
     [Range(0, 5)]
     public int damageToFlare;
+
+    [Range(0, 5)]
+    public float waitBetweenHeal;
 }

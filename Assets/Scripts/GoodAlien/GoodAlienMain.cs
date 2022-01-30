@@ -76,7 +76,7 @@ public class GoodAlienMain : MonoBehaviour
     {
         while(healthManager.CanHeal()) {
             healthManager.Heal(_alien.HealValue);
-            yield return null;
+            yield return new WaitForSeconds(_alien.waitBetweenHeal);
         }
     }
 
