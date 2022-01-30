@@ -22,4 +22,4 @@ MonoBehaviour:
   astronautDetectionDistance: 4
   loseControllTime: 5
   damageValue: 1
-  attackCooldown: 1
+  attackCooldown: 2
