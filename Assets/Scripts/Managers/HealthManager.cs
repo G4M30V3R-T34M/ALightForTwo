@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
     private int maxHealth;
-    private int currentHealth;
+    public int currentHealth;
 
     public delegate void NoHealthAction();
     public event NoHealthAction NoHealth;
@@ -21,17 +19,20 @@ public class HealthManager : MonoBehaviour
         if (isProtected) { return; }
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        if (currentHealth == 0 && NoHealth != null) {
+        if (currentHealth == 0 && NoHealth != null)
+        {
             NoHealth.Invoke();
         }
     }
 
-    public void Heal(int healValue) {
+    public void Heal(int healValue)
+    {
         currentHealth += healValue;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 
-    public bool CanHeal() {
+    public bool CanHeal()
+    {
         return currentHealth < maxHealth;
     }
 }

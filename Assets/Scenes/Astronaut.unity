@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 672152155}
   - component: {fileID: 672152154}
   - component: {fileID: 672152153}
-  - component: {fileID: 672152152}
   - component: {fileID: 672152156}
+  - component: {fileID: 672152152}
   - component: {fileID: 672152157}
   m_Layer: 12
   m_Name: Item
@@ -153,9 +153,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 672152151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da6ba1d7ad4952489ef727dd0ae3e3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 62cb4078dc7ad82479f9c694d8b862f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: 08ef5fa97bdafc841a17a511b9e24f91, type: 2}
 --- !u!50 &672152153
 Rigidbody2D:
   serializedVersion: 4
@@ -164,7 +165,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672152151}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
