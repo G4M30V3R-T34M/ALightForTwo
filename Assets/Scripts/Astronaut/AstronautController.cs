@@ -74,7 +74,7 @@ public class AstronautController : MonoBehaviour
     }
 
     private bool IsVisible(Collider2D collision) {
-        return collision.gameObject.GetComponent<Items>().isVisible;
+        return collision.gameObject.GetComponent<Item>().isVisible;
     }
 
     private bool IsTryingToPickUp() {
@@ -88,6 +88,7 @@ public class AstronautController : MonoBehaviour
             yield return null;
         }
         pickUpCoroutineReference = null;
+        objectToPick.gameObject.GetComponent<Item>().DoAction(gameObject);
         Destroy(objectToPick);
         objectToPick = null;
     }
