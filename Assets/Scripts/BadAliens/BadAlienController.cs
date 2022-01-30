@@ -21,24 +21,20 @@ public class BadAlienController : PoolableObject
 
     Coroutine CooldownCoroutieneReference;
 
-    private void Awake()
-    {
+    private void Awake() {
         healthManager = GetComponent<HealthManager>();
     }
 
-    private void Start()
-    {
+    private void Start() {
         InitHealthManager();
     }
 
-    private void InitHealthManager()
-    {
+    private void InitHealthManager() {
         healthManager.SetUp(alien.health);
         healthManager.NoHealth += Die;
     }
 
-    private void Die()
-    {
+    private void Die() {
         gameObject.SetActive(false);
     }
 
@@ -126,7 +122,6 @@ public class BadAlienController : PoolableObject
     }
 
     private void InteractWithTarget() {
-        Debug.Log("Bad alien attack");
         if (CooldownCoroutieneReference == null) {
             currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
             CooldownCoroutieneReference = StartCoroutine(AtackCooldown());

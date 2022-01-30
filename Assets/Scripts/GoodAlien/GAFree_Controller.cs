@@ -9,7 +9,6 @@ public class GAFree_Controller : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log("Free");
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             RaycastHit2D hit = GetMainHit(hits);

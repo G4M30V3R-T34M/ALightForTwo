@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthManager))]
 public class DontGoAlone : MonoBehaviour
 {
     enum Status {Astronaut, Alien, TravelToAstronaut, TravelToAlien}
@@ -12,24 +13,35 @@ public class DontGoAlone : MonoBehaviour
     Status currentStatus;
 
     [SerializeField] DontGoAloneScriptable dontGoAlone;
+    HealthManager health;
     Coroutine moveToDestinationCoroutine;
 
     private void Awake() {
         astronaut = FindObjectOfType<AstronautController>();
         alien = FindObjectOfType<GoodAlienMain>();
+        health = GetComponent<HealthManager>();
 
         transform.position = astronaut.transform.position;
-        transform.parent = astronaut.transform;
         currentStatus = Status.Astronaut;
     }
 
     private void Update() {
+        UpdatePosition();
         if (currentStatus == Status.Astronaut || currentStatus == Status.Alien) {
             if (Input.GetKeyDown(KeyCode.Return)) {
-                transform.parent = null; // TODO :: NOT SURE
                 StartSwitch();
             }
         }
+    }
+
+    private void UpdatePosition()
+    {
+        if (currentStatus == Status.Astronaut) {
+            transform.position = astronaut.transform.position;
+        } else if (currentStatus == Status.Alien) {
+            transform.position = alien.transform.position;
+        }
+
     }
 
     private void StartSwitch() {
@@ -41,6 +53,7 @@ public class DontGoAlone : MonoBehaviour
             flare.localScale = new Vector3(5, 5, 5);
             currentStatus = Status.TravelToAstronaut;
         }
+        health.isProtected = true;
         moveToDestinationCoroutine = StartCoroutine(MoveToDestinationCoroutine());
     }
 
@@ -58,7 +71,6 @@ public class DontGoAlone : MonoBehaviour
         }
 
         transform.position = destination.transform.position;
-        transform.parent = destination.transform;
         EndSwitch();
     }
 
@@ -69,6 +81,7 @@ public class DontGoAlone : MonoBehaviour
             flare.localScale = new Vector3(1, 1, 1);
         } else {
             currentStatus = Status.Astronaut;
+            health.isProtected = false;
             // TODO :: ASTRONAUT -- Switch activate dontGoAloneSprites
         }
     }

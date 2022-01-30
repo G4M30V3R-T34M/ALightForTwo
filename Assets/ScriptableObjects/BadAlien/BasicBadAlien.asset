@@ -19,6 +19,6 @@ MonoBehaviour:
   attack: 1
   lightFetchTime: 0.5
   interactionDistance: 0.5
-  astronautDetectionDistance: 4
-  damageValue: 1
+  astronautDetectionDistance: 5
   loseControllTime: 5
+  damageValue: 1
