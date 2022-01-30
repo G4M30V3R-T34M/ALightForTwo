@@ -34,4 +34,7 @@ public class BadAlienScriptable : ScriptableObject
 
     [Range(0, 5)]
     public int damageValue;
+
+    [Range(0, 10)]
+    public float attackCooldown;
 }
