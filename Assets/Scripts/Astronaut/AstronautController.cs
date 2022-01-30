@@ -10,6 +10,8 @@ public class AstronautController : MonoBehaviour
     [SerializeField] AstronautScriptable _astronaut;
     private VisibilityInteraction visibility;
     private HealthManager healthManager;
+    private AstronautMovement astronautMovement;
+
     public bool isVisible { get { return visibility.IsVisible; } }
 
     private Coroutine pickUpCoroutineReference;
@@ -21,6 +23,7 @@ public class AstronautController : MonoBehaviour
     private void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
         healthManager = GetComponent<HealthManager>();
+        astronautMovement = GetComponent<AstronautMovement>();
     }
 
     private void Start() {
@@ -90,11 +93,11 @@ public class AstronautController : MonoBehaviour
     }
 
     public void RestoreVelocity() {
-        _astronaut.currentVelocity = _astronaut.normalVelocity;
+        astronautMovement.velocity = _astronaut.normalVelocity;
     }
 
     public void GoSlower() {
-        _astronaut.currentVelocity= _astronaut.slowVelocity;
+        astronautMovement.velocity = _astronaut.slowVelocity;
     }
 
     public void TakeDamage(int damage) {
