@@ -77,8 +77,8 @@ public class BadAlienController : PoolableObject
 
     IEnumerator FetchEnvironmentCoroutine() {
         while(true) {
-            currentTarget = GetCurrentTarget();
             yield return new WaitForSeconds(alien.lightFetchTime);
+            currentTarget = GetCurrentTarget();
         }
     }
 
