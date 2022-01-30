@@ -13,7 +13,7 @@ public class GAHold_Controller : MonoBehaviour
 
     void Awake() {
         gaMovement = GetComponent<GA_Movement>();
-        healthManager = GetComponent<GoodAlienMain>().healthManager;
+        healthManager = GetComponent<HealthManager>();
         _alien = GetComponent<GoodAlienMain>().Alien;
     }
 
