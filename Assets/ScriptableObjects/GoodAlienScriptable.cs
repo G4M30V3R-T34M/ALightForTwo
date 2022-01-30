@@ -32,4 +32,7 @@ public class GoodAlienScriptable : ScriptableObject
 
     [Range(0, 30)]
     public int selfDamage;
+
+    [Range(0, 5)]
+    public int damageToFlare;
 }

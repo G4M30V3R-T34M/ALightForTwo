@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd681f64cb3185f478d94d538816c019, type: 3}
   m_Name: AstronautScriptable
   m_EditorClassIdentifier: 
-  velocity: 8
+  currentVelocity: 10
   pickUpTime: 2
+  slowVelocity: 5
+  normalVelocity: 10
+  bostVelocity: 15
+  health: 0

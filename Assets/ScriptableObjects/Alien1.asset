@@ -18,3 +18,8 @@ MonoBehaviour:
   shoutCoolDown: 3
   shoutInitialCooldown: 1
   shoutDistance: 5
+  health: 10
+  damageValue: 0
+  HealValue: 0
+  selfDamage: 0
+  damageToFlare: 0

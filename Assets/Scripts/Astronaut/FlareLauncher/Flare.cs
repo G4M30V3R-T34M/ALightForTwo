@@ -2,20 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(HealthManager))]
 public class Flare : PoolableObject
 {
     [SerializeField] FlareScriptable _flare;
+    private HealthManager healthManager;
 
     private CircleCollider2D collider;
-    // Start is called before the first frame update
+    void Awake() {
+        healthManager = GetComponent<HealthManager>();
+    }
+
     void Start() {
         BadAlienMind.Instance.addLight(gameObject);
         collider = GetComponent<CircleCollider2D>();
+        InitHealthManager();
     }
 
-    // Update is called once per frame
-    void Update() {
-        
+    private void InitHealthManager() {
+        healthManager.SetUp(_flare.health);
+        healthManager.NoHealth += Die;
+    }
+
+    private void Die()
+    {
+        gameObject.SetActive(false);
     }
 
     public void Launch(Vector3 direction, float power) {

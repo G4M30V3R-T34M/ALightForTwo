@@ -113,8 +113,7 @@ public class BadAlienController : PoolableObject
     }
 
     private void InteractWithTarget() {
-        // TODO
-        Debug.Log("ALIEN ATTACK / DETROY LIGHT");
+        currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
     }
 
     private void MoveTowardsTarget() {

@@ -13,4 +13,7 @@ public class FlareScriptable : ScriptableObject
 
     [Range(0, 1)]
     public float distanceError;
+
+    [Range(0, 5)]
+    public int health;
 }
