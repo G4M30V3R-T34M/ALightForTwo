@@ -17,4 +17,4 @@ MonoBehaviour:
   slowVelocity: 5
   normalVelocity: 10
   bostVelocity: 15
-  health: 0
+  health: 5

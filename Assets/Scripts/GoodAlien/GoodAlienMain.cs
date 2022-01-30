@@ -40,7 +40,7 @@ public class GoodAlienMain : MonoBehaviour
         InitHealthManager();
     }
     private void InitHealthManager() {
-        healthManager.SetUp(_alien.health);
+        healthManager.SetUp(_alien.Health);
         healthManager.NoHealth += Die;
     }
 

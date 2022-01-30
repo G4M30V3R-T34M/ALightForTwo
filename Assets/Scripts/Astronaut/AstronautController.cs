@@ -93,14 +93,12 @@ public class AstronautController : MonoBehaviour
         _astronaut.currentVelocity= _astronaut.slowVelocity;
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         healthManager.TakeDamage(damage);
     }
 
-    private void Die()
-    {
-        // Player Die
+    private void Die() {
+        Debug.Log("Astronaut Dies");
     }
 
 }
