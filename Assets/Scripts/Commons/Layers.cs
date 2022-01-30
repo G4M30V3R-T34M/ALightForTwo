@@ -5,5 +5,6 @@ public enum Layers {
     GoodAlien = 10,
     BadAlien = 11,
     Items = 12,
-    Flare = 13
+    Flare = 13,
+    GoodAlienShout = 15,
 }

@@ -15,3 +15,6 @@ MonoBehaviour:
   Speed: 3
   Health: 3
   interactDistance: 0.7
+  shoutCoolDown: 3
+  shoutInitialCooldown: 1
+  shoutDistance: 5

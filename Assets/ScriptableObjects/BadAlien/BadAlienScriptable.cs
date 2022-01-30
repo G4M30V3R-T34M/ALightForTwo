@@ -11,6 +11,9 @@ public class BadAlienScriptable : ScriptableObject
     [Range(0, 10)]
     public float speed;
 
+    [Range(0, 10)]
+    public float fearSpeed;
+
     [Range(1, 10)]
     public int attack;
 
@@ -22,4 +25,7 @@ public class BadAlienScriptable : ScriptableObject
 
     [Range(0, 20)]
     public float astronautDetectionDistance;
+
+    [Range(0, 10)]
+    public float loseControllTime;
 }
