@@ -28,7 +28,6 @@ public class AstroAnimationController : MonoBehaviour
     void Start() {
         animator.SetInteger(KEY_STATE, (int)AstroAnimStates.Iddle);
         animator.SetInteger(KEY_DIRECTION, (int)Directions.Down);
-        
     }
 
     public void Stop() {
