@@ -18,18 +18,22 @@ public class AstronautController : MonoBehaviour
     private bool pickableObject;
     GameObject objectToPick;
 
-    public void Awake()
-    {
+    private void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
         healthManager = GetComponent<HealthManager>();
     }
 
-    private void Start()
-    {
+    private void Start() {
         visibility.InLight += RestoreVelocity;
         visibility.OutLight += GoSlower;
         InitHealthManager();
         _astronaut.currentVelocity = _astronaut.normalVelocity;
+    }
+
+    private void OnDestroy(){
+        visibility.InLight -= RestoreVelocity;
+        visibility.OutLight -= GoSlower;
+        healthManager.NoHealth -= Die;
     }
 
     private void InitHealthManager() {
