@@ -30,7 +30,6 @@ public class AstronautController : MonoBehaviour
         visibility.InLight += RestoreVelocity;
         visibility.OutLight += GoSlower;
         InitHealthManager();
-        _astronaut.currentVelocity = _astronaut.normalVelocity;
     }
 
     private void OnDestroy(){
@@ -61,7 +60,7 @@ public class AstronautController : MonoBehaviour
         if (IsItem(other)) {
             pickableObject = false;
             objectToPick = null;
-            if (pickUpCoroutineReference != null) {
+            if (pickUpCoroutineReference == null) {
                 StopCoroutine(pickUpCoroutineReference);
                 pickUpCoroutineReference = null;
             }
