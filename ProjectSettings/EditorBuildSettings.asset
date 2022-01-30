@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f899aca665be78c41b7c30c15e6f6d69
+  - enabled: 0
+    path: Assets/Scenes/Astronaut.unity
+    guid: 551ba3844dafc99408f43628c2221b51
+  - enabled: 1
+    path: Assets/Scenes/GoodAlienTestScene.unity
+    guid: 105d64d9eaadc9641836c8960aedcc45
+  - enabled: 1
+    path: Assets/Scenes/History.unity
+    guid: b421323cc4cdef442bb73c997c89cef6
+  - enabled: 1
+    path: Assets/Scenes/PlayerControls.unity
+    guid: 3c5a718202d99ea4899aca7271608c09
+  - enabled: 1
+    path: Assets/Scenes/GameCredits.unity
+    guid: 12ad3c6c3a63c0a4aa6c32a5c1dc4c50
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
