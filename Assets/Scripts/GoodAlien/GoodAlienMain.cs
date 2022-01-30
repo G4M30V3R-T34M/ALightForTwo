@@ -63,7 +63,7 @@ public class GoodAlienMain : MonoBehaviour
     private void ExitLight()
     {
         Debug.Log("ExitLight");
-        if (healingCoroutineReference != null) {
+        if (healingCoroutineReference == null) {
             healingCoroutineReference = StartCoroutine(Healing());
         }
     }

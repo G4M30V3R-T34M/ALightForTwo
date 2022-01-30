@@ -60,7 +60,7 @@ public class AstronautController : MonoBehaviour
         if (IsItem(other)) {
             pickableObject = false;
             objectToPick = null;
-            if (pickUpCoroutineReference == null) {
+            if (pickUpCoroutineReference != null) {
                 StopCoroutine(pickUpCoroutineReference);
                 pickUpCoroutineReference = null;
             }
