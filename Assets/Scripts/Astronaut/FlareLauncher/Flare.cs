@@ -20,6 +20,10 @@ public class Flare : PoolableObject
         InitHealthManager();
     }
 
+    private void OnDestroy() {
+        healthManager.NoHealth -= Die;
+    }
+
     private void InitHealthManager() {
         healthManager.SetUp(_flare.health);
         healthManager.NoHealth += Die;
