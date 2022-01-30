@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fe6229bb05efb4a9fe604ff7b8a0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GO_Manager: {fileID: 5611085087009442736, guid: af67e5407f52513469b9a691953b9050, type: 3}
   _astronaut: {fileID: 11400000, guid: 695460efd29f6b84c96c46e5a22331db, type: 2}
 --- !u!114 &6608186719781179069
 MonoBehaviour:

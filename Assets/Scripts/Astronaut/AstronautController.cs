@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(AstroAnimationController))]
 public class AstronautController : MonoBehaviour
 {
+    [SerializeField] GameOverManager GO_Manager;
     [SerializeField] AstronautScriptable _astronaut;
     private VisibilityInteraction visibility;
     private HealthManager healthManager;
@@ -112,7 +113,7 @@ public class AstronautController : MonoBehaviour
     }
 
     private void Die() {
-        Debug.Log("Astronaut Dies");
+        GO_Manager.GameOver();
     }
 
 }

@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthManager: {fileID: 0}
+  GO_Manager: {fileID: 5611085087009442736, guid: af67e5407f52513469b9a691953b9050, type: 3}
   _alien: {fileID: 11400000, guid: 5e757fbb0e8ec8343a3d4687bbcae4d6, type: 2}
 --- !u!114 &4222546265363030472
 MonoBehaviour:

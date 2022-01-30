@@ -14,6 +14,7 @@ public class GoodAlienMain : MonoBehaviour
     public HealthManager healthManager;
     public bool IsVisible { get { return visibility.IsVisible; } }
 
+    [SerializeField] GameOverManager GO_Manager;
     [SerializeField] GoodAlienScriptable _alien ;
     public GoodAlienScriptable Alien { get { return _alien; } }
 
@@ -51,7 +52,7 @@ public class GoodAlienMain : MonoBehaviour
     }
 
     private void Die() {
-        // Alien Dies
+        GO_Manager.GameOver();
     }
 
     private void EnterLight() {
