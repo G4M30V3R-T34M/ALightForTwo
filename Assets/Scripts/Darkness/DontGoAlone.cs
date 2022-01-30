@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthManager))]
 public class DontGoAlone : MonoBehaviour
 {
     enum Status {Astronaut, Alien, TravelToAstronaut, TravelToAlien}
@@ -12,11 +13,13 @@ public class DontGoAlone : MonoBehaviour
     Status currentStatus;
 
     [SerializeField] DontGoAloneScriptable dontGoAlone;
+    HealthManager health;
     Coroutine moveToDestinationCoroutine;
 
     private void Awake() {
         astronaut = FindObjectOfType<AstronautController>();
         alien = FindObjectOfType<GoodAlienMain>();
+        health = GetComponent<HealthManager>();
 
         transform.position = astronaut.transform.position;
         transform.parent = astronaut.transform;
@@ -41,6 +44,7 @@ public class DontGoAlone : MonoBehaviour
             flare.localScale = new Vector3(5, 5, 5);
             currentStatus = Status.TravelToAstronaut;
         }
+        health.isProtected = true;
         moveToDestinationCoroutine = StartCoroutine(MoveToDestinationCoroutine());
     }
 
@@ -63,6 +67,7 @@ public class DontGoAlone : MonoBehaviour
     }
 
     private void EndSwitch() {
+        health.isProtected = false;
         if (currentStatus == Status.TravelToAlien) {
             currentStatus = Status.Alien;
             alien.SwitchController();
