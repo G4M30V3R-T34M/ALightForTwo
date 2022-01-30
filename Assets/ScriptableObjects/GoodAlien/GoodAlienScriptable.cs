@@ -6,6 +6,12 @@ public class GoodAlienScriptable : ScriptableObject
     [Range(0,10)]
     public float Speed;
 
+    [Range(0, 2)]
+    public float HoldSpeedModifier;
+
+    [Range(0, 2)]
+    public float ObstacleSpeedModifier;
+
     [Range(1,300)]
     public int Health;
 

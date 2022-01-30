@@ -14,6 +14,9 @@ public class BadAlienScriptable : ScriptableObject
     [Range(0, 10)]
     public float fearSpeed;
 
+    [Range(0, 2)]
+    public float obstacleSpeedModifier;
+
     [Range(1, 10)]
     public int attack;
 
