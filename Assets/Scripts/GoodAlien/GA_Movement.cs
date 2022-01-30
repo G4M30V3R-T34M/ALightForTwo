@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(GoodAlienMain))]
+[RequireComponent(typeof(GA_AnimationController))]
 public class GA_Movement : MonoBehaviour
 {
     enum Actions {None, Move, Eat, Attack};
@@ -12,11 +13,13 @@ public class GA_Movement : MonoBehaviour
     Coroutine movementCoroutine;
     GoodAlienScriptable alien;
     GoodAlienMain alienMain;
+    GA_AnimationController animatorController;
 
     int obstacles;
 
     void Awake() {
         alienMain = GetComponent<GoodAlienMain>();
+        animatorController = GetComponent<GA_AnimationController>();
         alien = alienMain.Alien;
     }
 
@@ -49,16 +52,36 @@ public class GA_Movement : MonoBehaviour
     }
 
     IEnumerator MovementCoroutine() {
+        animatorController.Move();
         while (Vector2.Distance(GetDestination(), transform.position) >= alien.interactDistance) {
             Vector2 trans = GetDestination() - (Vector2)transform.position;
             trans.Normalize();
             trans *= GetSpeed() * Time.deltaTime;
             transform.Translate(trans);
+            UpdateAnimator(trans);
             yield return null;
         }
+        animatorController.Stop();
         DoAction();
         movementCoroutine = null;
     }
+
+    private void UpdateAnimator(Vector2 trans) {
+        if (Mathf.Abs(trans.x) > Mathf.Abs(trans.y)) {
+            if (trans.x > 0) {
+                animatorController.ChangeDirection(Directions.Right);
+            } else {
+                animatorController.ChangeDirection(Directions.Left);
+            }
+        } else {
+            if (trans.y > 0) {
+                animatorController.ChangeDirection(Directions.Up);
+            } else {
+                animatorController.ChangeDirection(Directions.Down);
+            }
+        }
+    }
+
 
     private float GetSpeed() {
         float speed = alien.Speed;
@@ -83,12 +106,14 @@ public class GA_Movement : MonoBehaviour
     private void DoAttack() {
         // TODO
         Debug.Log("PERFORM ATTACK");
+        animatorController.Attack();
         gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
     }
 
     private void DoEat() {
         // TODO
         Debug.Log("EAT FLARE");
+        animatorController.Attack();
         gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageToFlare);
     }
 

@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 269389600516394312}
   - component: {fileID: 269389600516394313}
-  - component: {fileID: 269389600516394314}
+  - component: {fileID: 3647111634554305903}
   - component: {fileID: 269389600516394315}
   - component: {fileID: 269389600516394359}
+  - component: {fileID: 6404470965564270344}
+  - component: {fileID: 5394504170733853228}
   m_Layer: 11
   m_Name: BadAlien
   m_TagString: Untagged
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.8301887, g: 0, b: 0.059814777, a: 1}
+  m_Sprite: {fileID: 6701742715167124944, guid: 73ce0cb41a329ba48af646cf68b767d9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,8 +87,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &269389600516394314
-CircleCollider2D:
+--- !u!70 &3647111634554305903
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.5425794}
+  m_Size: {x: 1.3283507, y: 1.7930374}
+  m_Direction: 0
 --- !u!50 &269389600516394315
 Rigidbody2D:
   serializedVersion: 4
@@ -135,3 +137,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alien: {fileID: 11400000, guid: aa669c961b1e3394daa6f5d21953d19e, type: 2}
+--- !u!114 &6404470965564270344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269389600516394316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8caadf61fecacf148afad9c172ec1335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &5394504170733853228
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269389600516394316}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2b4501c8ba24684990e94638f8b973b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

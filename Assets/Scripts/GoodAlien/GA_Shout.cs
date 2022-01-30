@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GoodAlienMain))]
+[RequireComponent(typeof(GA_AnimationController))]
 public class GA_Shout : MonoBehaviour
 {
     [SerializeField] GameObject shout;
@@ -10,10 +11,12 @@ public class GA_Shout : MonoBehaviour
 
     float coolDown;
     Coroutine stopShoutCoroutine;
+    GA_AnimationController animatorController;
 
     void Awake() {
         alien = GetComponent<GoodAlienMain>();
         coolDown = alien.Alien.shoutInitialCooldown;
+        animatorController = GetComponent<GA_AnimationController>();
         shout.SetActive(false);
     }
 
@@ -30,6 +33,7 @@ public class GA_Shout : MonoBehaviour
     }
 
     private void DoShout() {
+        animatorController.Shout();
         coolDown = alien.Alien.shoutCoolDown;
         shout.SetActive(true);
         if (stopShoutCoroutine == null) {

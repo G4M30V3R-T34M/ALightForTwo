@@ -223,10 +223,12 @@ GameObject:
   - component: {fileID: 6608186719781179065}
   - component: {fileID: 6608186719781179069}
   - component: {fileID: 6608186719781179068}
+  - component: {fileID: 270444611135196174}
   - component: {fileID: 6608186719781179010}
   - component: {fileID: 6608186719781179011}
   - component: {fileID: 6608186719781179008}
-  - component: {fileID: 270444611135196174}
+  - component: {fileID: 581457778317816361}
+  - component: {fileID: 4153078623064561644}
   m_Layer: 9
   m_Name: Astronaut
   m_TagString: Untagged
@@ -291,7 +293,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 3971536867572523478, guid: 2e9bfde7fa7f0534ea479a1e985a523b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -341,9 +343,25 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 0.85
+--- !u!70 &270444611135196174
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608186719781179064}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_Size: {x: 0.8, y: 1.2}
+  m_Direction: 0
 --- !u!50 &6608186719781179010
 Rigidbody2D:
   serializedVersion: 4
@@ -390,22 +408,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isProtected: 0
---- !u!70 &270444611135196174
-CapsuleCollider2D:
+--- !u!95 &581457778317816361
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6608186719781179064}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1.6}
-  m_Direction: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a289456591b6e6a4ab7c5d4a44dddeb9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4153078623064561644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6608186719781179064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd02df53034d584db6b9894d7915e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6608186719814653265
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +535,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3557134841223578306, guid: 3a696c5ed1114724da415747245de158, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 4153078623064561644}
     - target: {fileID: 3557134841223578306, guid: 3a696c5ed1114724da415747245de158, type: 3}
       propertyPath: powerBar
       value: 

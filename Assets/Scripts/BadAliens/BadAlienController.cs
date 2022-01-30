@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[RequireComponent(typeof(BA_AnimationController))]
 [RequireComponent(typeof(HealthManager))]
 public class BadAlienController : PoolableObject
 {
     enum TargetType {Light, Astronaut}
     [SerializeField] BadAlienScriptable alien;
+    BA_AnimationController animator;
     
     HealthManager healthManager;
 
@@ -15,6 +17,7 @@ public class BadAlienController : PoolableObject
     private TargetType targetType;
 
     int obstacles;
+    bool isAttacking;
 
     float afraidTime;
     Vector2 fearPoint;
@@ -23,10 +26,12 @@ public class BadAlienController : PoolableObject
 
     private void Awake() {
         healthManager = GetComponent<HealthManager>();
+        animator = GetComponent<BA_AnimationController>();
     }
 
     private void Start() {
         InitHealthManager();
+        isAttacking = false;
     }
 
     private void InitHealthManager() {
@@ -66,6 +71,7 @@ public class BadAlienController : PoolableObject
     }
 
     private void FreeUpdate() {
+        if (isAttacking) { return; }
         if (currentTarget == null) { return; }
 
         if (Vector2.Distance(currentTarget.transform.position, transform.position) < alien.interactionDistance) {
@@ -77,8 +83,8 @@ public class BadAlienController : PoolableObject
 
     IEnumerator FetchEnvironmentCoroutine() {
         while(true) {
-            currentTarget = GetCurrentTarget();
             yield return new WaitForSeconds(alien.lightFetchTime);
+            currentTarget = GetCurrentTarget();
         }
     }
 
@@ -115,24 +121,46 @@ public class BadAlienController : PoolableObject
     }
 
     private void MoveAwayFromFear() {
+        animator.Move();
         Vector2 translate = (Vector2)transform.position - fearPoint;
         translate.Normalize();
         translate *= GetSpeed() * Time.deltaTime;
         transform.Translate(translate);
+        UpdateAnimationDirection(translate);
+    }
+
+    private void UpdateAnimationDirection(Vector2 trans) {
+        if (Mathf.Abs(trans.x) > Mathf.Abs(trans.y)) {
+            if (trans.x > 0) {
+                animator.SetDirection(Directions.Right);
+            } else {
+                animator.SetDirection(Directions.Left);
+            }
+        } else {
+            if (trans.y > 0) {
+                animator.SetDirection(Directions.Up);
+            } else {
+                animator.SetDirection(Directions.Down);
+            }
+        }
     }
 
     private void InteractWithTarget() {
+        animator.Attack();
         if (CooldownCoroutieneReference == null) {
+            isAttacking = true;
             currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
             CooldownCoroutieneReference = StartCoroutine(AtackCooldown());
         }
     }
 
     private void MoveTowardsTarget() {
+        animator.Move();
         Vector2 translate = currentTarget.transform.position - transform.position;
         translate.Normalize();
         translate *= GetSpeed() * Time.deltaTime;
         transform.Translate(translate);
+        UpdateAnimationDirection(translate);
     }
 
     private float GetSpeed() {
@@ -154,6 +182,11 @@ public class BadAlienController : PoolableObject
         if (collision.gameObject.layer == (int)Layers.Obstacles) {
             obstacles--;
         }
+    }
+
+    public void AttackEnd() {
+        isAttacking = false;
+        animator.Stop();
     }
 
     private IEnumerator AtackCooldown() {
