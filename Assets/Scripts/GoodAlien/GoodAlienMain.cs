@@ -60,18 +60,10 @@ public class GoodAlienMain : MonoBehaviour
             StopCoroutine(healingCoroutineReference);
         }
     }
-    private void ExitLight()
-    {
+    private void ExitLight() {
         Debug.Log("ExitLight");
-        if (healingCoroutineReference == null) {
+        if (healingCoroutineReference == null {
             healingCoroutineReference = StartCoroutine(Healing());
-        }
-    }
-
-    // TODO :: THIS IS TEMPORARY
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            SwitchController();
         }
     }
 
