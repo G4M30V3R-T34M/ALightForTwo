@@ -14,6 +14,8 @@ public class BadAlienController : PoolableObject
     private GameObject currentTarget;
     private TargetType targetType;
 
+    int obstacles;
+
     float afraidTime;
     Vector2 fearPoint;
 
@@ -41,6 +43,7 @@ public class BadAlienController : PoolableObject
     void OnEnable() {
         StartCoroutine(FetchEnvironmentCoroutine());
         afraidTime = 0;
+        obstacles = 0;
     }
 
     void Update() {
@@ -108,7 +111,7 @@ public class BadAlienController : PoolableObject
     private void MoveAwayFromFear() {
         Vector2 translate = (Vector2)transform.position - fearPoint;
         translate.Normalize();
-        translate *= alien.fearSpeed * Time.deltaTime;
+        translate *= GetSpeed() * Time.deltaTime;
         transform.Translate(translate);
     }
 
@@ -120,14 +123,28 @@ public class BadAlienController : PoolableObject
     private void MoveTowardsTarget() {
         Vector2 translate = currentTarget.transform.position - transform.position;
         translate.Normalize();
-        translate *= alien.speed * Time.deltaTime;
+        translate *= GetSpeed() * Time.deltaTime;
         transform.Translate(translate);
+    }
+
+    private float GetSpeed() {
+        float speed = (afraidTime > 0) ? alien.fearSpeed : alien.speed;
+        if (obstacles > 0 ) { speed *= alien.obstacleSpeedModifier; }
+        return speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == (int)Layers.GoodAlienShout) {
             fearPoint = collision.gameObject.transform.position;
             afraidTime = alien.loseControllTime;
+        } else if (collision.gameObject.layer == (int)Layers.Obstacles) {
+            obstacles++;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.layer == (int)Layers.Obstacles) {
+            obstacles--;
         }
     }
 }

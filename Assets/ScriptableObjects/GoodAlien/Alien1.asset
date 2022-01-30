@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   Health: 300
+  HoldSpeedModifier: 0.8
+  ObstacleSpeedModifier: 0.8
+  Health: 3
   interactDistance: 0.7
   shoutCoolDown: 3
   shoutInitialCooldown: 1

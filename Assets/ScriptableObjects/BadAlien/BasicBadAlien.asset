@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   speed: 2
+  fearSpeed: 3
+  obstacleSpeedModifier: 0.5
   attack: 1
   lightFetchTime: 0.5
   interactionDistance: 0.5
   astronautDetectionDistance: 4
   damageValue: 1
+  loseControllTime: 5
