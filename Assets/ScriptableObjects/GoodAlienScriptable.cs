@@ -11,4 +11,13 @@ public class GoodAlienScriptable : ScriptableObject
 
     [Range(0, 5)]
     public float interactDistance;
+
+    [Range(0, 20)]
+    public float shoutCoolDown;
+
+    [Range(0, 20)]
+    public float shoutInitialCooldown;
+
+    [Range(0, 20)]
+    public float shoutDistance;
 }

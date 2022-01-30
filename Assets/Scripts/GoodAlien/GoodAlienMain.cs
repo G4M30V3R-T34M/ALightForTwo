@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(GAFree_Controller))]
 [RequireComponent(typeof(GAHold_Controller))]
 [RequireComponent(typeof(GA_Movement))]
+[RequireComponent(typeof(GA_Shout))]
 [RequireComponent(typeof(VisibilityInteraction))]
 public class GoodAlienMain : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GoodAlienMain : MonoBehaviour
 
     GAFree_Controller freeController;
     GAHold_Controller holdController;
+
+    public bool isFree { get { return freeController.isActiveAndEnabled; } }
 
     private void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
