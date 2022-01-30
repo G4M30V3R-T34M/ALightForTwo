@@ -44,6 +44,12 @@ public class GoodAlienMain : MonoBehaviour
         healthManager.NoHealth += Die;
     }
 
+    private void OnDestroy() {
+        visibility.InLight -= EnterLight;
+        visibility.OutLight -= ExitLight;
+        healthManager.NoHealth -= Die;
+    }
+
     private void Die() {
         // Alien Dies
     }
