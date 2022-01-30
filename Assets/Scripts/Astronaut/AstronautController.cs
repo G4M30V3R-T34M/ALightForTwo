@@ -4,10 +4,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(AstronautMovement))]
 [RequireComponent(typeof(VisibilityInteraction))]
+[RequireComponent(typeof(HealthManager))]
 public class AstronautController : MonoBehaviour
 {
     [SerializeField] AstronautScriptable _astronaut;
     private VisibilityInteraction visibility;
+    private HealthManager healthManager;
+    private AstronautMovement astronautMovement;
+
     public bool isVisible { get { return visibility.IsVisible; } }
 
     private Coroutine pickUpCoroutineReference;
@@ -16,9 +20,27 @@ public class AstronautController : MonoBehaviour
     private bool pickableObject;
     GameObject objectToPick;
 
-    private void Awake()
-    {
+    private void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
+        healthManager = GetComponent<HealthManager>();
+        astronautMovement = GetComponent<AstronautMovement>();
+    }
+
+    private void Start() {
+        visibility.InLight += RestoreVelocity;
+        visibility.OutLight += GoSlower;
+        InitHealthManager();
+    }
+
+    private void OnDestroy(){
+        visibility.InLight -= RestoreVelocity;
+        visibility.OutLight -= GoSlower;
+        healthManager.NoHealth -= Die;
+    }
+
+    private void InitHealthManager() {
+        healthManager.SetUp(_astronaut.health);
+        healthManager.NoHealth += Die;
     }
 
     public void Update() {
@@ -38,8 +60,7 @@ public class AstronautController : MonoBehaviour
         if (IsItem(other)) {
             pickableObject = false;
             objectToPick = null;
-            if (pickUpCoroutineReference != null)
-            {
+            if (pickUpCoroutineReference != null) {
                 StopCoroutine(pickUpCoroutineReference);
                 pickUpCoroutineReference = null;
             }
@@ -61,8 +82,7 @@ public class AstronautController : MonoBehaviour
 
     private IEnumerator PickUpItem() {
         remainingPickUpTime = _astronaut.pickUpTime;
-        while (remainingPickUpTime > 0)
-        {
+        while (remainingPickUpTime > 0) {
             remainingPickUpTime -= Time.deltaTime;
             yield return null;
         }
@@ -70,4 +90,21 @@ public class AstronautController : MonoBehaviour
         Destroy(objectToPick);
         objectToPick = null;
     }
+
+    public void RestoreVelocity() {
+        astronautMovement.velocity = _astronaut.normalVelocity;
+    }
+
+    public void GoSlower() {
+        astronautMovement.velocity = _astronaut.slowVelocity;
+    }
+
+    public void TakeDamage(int damage) {
+        healthManager.TakeDamage(damage);
+    }
+
+    private void Die() {
+        Debug.Log("Astronaut Dies");
+    }
+
 }

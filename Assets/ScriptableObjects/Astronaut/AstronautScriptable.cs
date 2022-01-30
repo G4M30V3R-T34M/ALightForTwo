@@ -5,9 +5,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AstronautScriptable", menuName = "Scriptables/AstronautScriptable", order = 1)]
 public class AstronautScriptable : ScriptableObject
 {
-    [Range(0, 15)]
-    public float velocity;
-
     [Range(0, 10)]
     public float pickUpTime;
+
+    [Range(0, 10)]
+    public float slowVelocity;
+
+    [Range(0, 15)]
+    public float normalVelocity;
+
+    [Range(0, 20)]
+    public float bostVelocity;
+
+    [Range(0, 10)]
+    public int health;
 }

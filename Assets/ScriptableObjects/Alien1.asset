@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Alien1
   m_EditorClassIdentifier: 
   Speed: 3
-  Health: 3
+  Health: 300
   interactDistance: 0.7
   shoutCoolDown: 3
   shoutInitialCooldown: 1
   shoutDistance: 5
+  health: 10
+  damageValue: 1
+  HealValue: 1
+  selfDamage: 1
+  damageToFlare: 3

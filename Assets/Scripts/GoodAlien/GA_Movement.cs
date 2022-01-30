@@ -67,13 +67,13 @@ public class GA_Movement : MonoBehaviour
     private void DoAttack() {
         // TODO
         Debug.Log("PERFORM ATTACK");
-        gameObjectDestination.SetActive(false);
+        gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
     }
 
     private void DoEat() {
         // TODO
         Debug.Log("EAT FLARE");
-        gameObjectDestination.SetActive(false);
+        gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageToFlare);
     }
 
 }

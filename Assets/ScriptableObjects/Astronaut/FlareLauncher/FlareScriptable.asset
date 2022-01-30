@@ -15,3 +15,4 @@ MonoBehaviour:
   distanceCoefficient: 8
   velocity: 10
   distanceError: 0.2
+  health: 3

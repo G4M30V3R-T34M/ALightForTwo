@@ -18,3 +18,4 @@ MonoBehaviour:
   lightFetchTime: 0.5
   interactionDistance: 0.5
   astronautDetectionDistance: 4
+  damageValue: 1
