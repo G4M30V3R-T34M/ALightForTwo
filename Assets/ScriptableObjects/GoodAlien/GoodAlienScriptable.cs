@@ -12,7 +12,7 @@ public class GoodAlienScriptable : ScriptableObject
     [Range(0, 2)]
     public float ObstacleSpeedModifier;
 
-    [Range(1,300)]
+    [Range(1,30000)]
     public int Health;
 
     [Range(0, 5)]
@@ -26,9 +26,6 @@ public class GoodAlienScriptable : ScriptableObject
 
     [Range(0, 20)]
     public float shoutDistance;
-
-    [Range(0, 10)]
-    public int health;
 
     [Range(0, 5)]
     public int damageValue;
