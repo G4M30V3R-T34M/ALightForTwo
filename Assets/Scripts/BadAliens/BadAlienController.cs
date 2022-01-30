@@ -19,6 +19,8 @@ public class BadAlienController : PoolableObject
     float afraidTime;
     Vector2 fearPoint;
 
+    Coroutine CooldownCoroutieneReference;
+
     private void Awake()
     {
         healthManager = GetComponent<HealthManager>();
@@ -44,6 +46,14 @@ public class BadAlienController : PoolableObject
         StartCoroutine(FetchEnvironmentCoroutine());
         afraidTime = 0;
         obstacles = 0;
+    }
+
+    override protected void OnDisable() {
+        if (CooldownCoroutieneReference != null) {
+            StopCoroutine(CooldownCoroutieneReference);
+        }
+        base.OnDisable();
+        
     }
 
     void Update() {
@@ -117,7 +127,10 @@ public class BadAlienController : PoolableObject
 
     private void InteractWithTarget() {
         Debug.Log("Bad alien attack");
-        currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
+        if (CooldownCoroutieneReference == null) {
+            currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
+            CooldownCoroutieneReference = StartCoroutine(AtackCooldown());
+        }
     }
 
     private void MoveTowardsTarget() {
@@ -146,5 +159,10 @@ public class BadAlienController : PoolableObject
         if (collision.gameObject.layer == (int)Layers.Obstacles) {
             obstacles--;
         }
+    }
+
+    private IEnumerator AtackCooldown() {
+        yield return new WaitForSeconds(alien.attackCooldown);
+        CooldownCoroutieneReference = null;
     }
 }
