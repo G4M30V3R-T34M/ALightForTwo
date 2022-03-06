@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Fuel : Item
 {
-    [SerializeField] HUD_Manager hudManager;
-    public override void DoAction(GameObject picker = null)
-    {
+    HUD_Manager hudManager;
+
+    new protected void Awake() {
+        base.Awake();
+        hudManager = FindObjectOfType<HUD_Manager>();
+    }
+
+    public override void DoAction(GameObject picker = null) {
         Debug.Log("Fuel Getted");
         hudManager.FuelAdquired();
     }

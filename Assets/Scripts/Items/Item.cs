@@ -10,7 +10,7 @@ public abstract class Item : MonoBehaviour
     public bool isVisible { get { return visibility.IsVisible; } }
     [SerializeField] protected ItemScriptable _item;
 
-    private void Awake()
+    protected void Awake()
     {
         visibility = GetComponent<VisibilityInteraction>();
     }
