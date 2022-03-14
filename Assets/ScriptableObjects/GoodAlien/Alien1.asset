@@ -15,7 +15,7 @@ MonoBehaviour:
   Speed: 3
   HoldSpeedModifier: 0.8
   ObstacleSpeedModifier: 0.8
-  Health: 300
+  Health: 3000
   interactDistance: 0.7
   shoutCoolDown: 3
   shoutInitialCooldown: 1

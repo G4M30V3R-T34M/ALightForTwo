@@ -7,6 +7,7 @@ public class LifeBarManager : MonoBehaviour
 {
     [SerializeField] Image mainBar;
     [SerializeField] Image secondaryBar;
+    [SerializeField] LifeBarScriptable _lifeBar;
 
     public void UpdateBar(float totalLife)
     {
@@ -19,11 +20,11 @@ public class LifeBarManager : MonoBehaviour
         // Damage
         if(mainBar.fillAmount < secondaryBar.fillAmount)
         {
-            secondaryBar.fillAmount -= 0.1f * 4 * Time.deltaTime;
+            secondaryBar.fillAmount -= _lifeBar.ammount * _lifeBar.speed * Time.deltaTime;
         }
 
         // Heal
-        if(mainBar.fillAmount - secondaryBar.fillAmount >= 0.1f)
+        if(mainBar.fillAmount - secondaryBar.fillAmount >= _lifeBar.ammount)
         {
             secondaryBar.fillAmount = mainBar.fillAmount;
         }
