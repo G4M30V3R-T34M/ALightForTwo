@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f81fc623b5e2342993e4afac13bb68, type: 3}
   m_Name: AlienLifeBarScriptable
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 1
   ammount: 0.1
