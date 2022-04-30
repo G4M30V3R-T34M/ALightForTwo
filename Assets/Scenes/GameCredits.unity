@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main menu
+  m_Text: "Men\xFA"
 --- !u!222 &363881551
 CanvasRenderer:
   m_ObjectHideFlags: 0
