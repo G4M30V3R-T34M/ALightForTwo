@@ -312,15 +312,15 @@ RectTransform:
   m_GameObject: {fileID: 323673116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.5625, y: 8.9262, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 576027823}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323673118
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: b8a0132cce0da6c4a807a393dc1f4d4b, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -393,9 +393,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.95, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 600}
+  m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &327011917
 MonoBehaviour:
@@ -424,23 +424,23 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Inicio de la transmisi\xF3n\nComandante: Ash Troh\nNave: G4-M3  0V-3R\nCuaderno
-    de bit\xE1cora espacial. He recibido una se\xF1al de un planeta. Me dispongo
-    a ver de d\xF3nde procede. \nEntrando en la atmosfera\nInterferencias\nAterrizaje
-    forzoso\nParece ser que me he quedado sin combustible.\nInvestigando un poco
-    mi zona, he encontrado un huevo. Lo cuidar\xE9 a ver que sale. Tengo curiosidad.\nUn
+  m_Text: "\n\n---Inicio de la transmisi\xF3n---\n\nComandante: Ash Troh\nNave: G4-M3 
+    0V-3R\n\n:::Cuaderno de bit\xE1cora espacial:::\nHe recibido una se\xF1al de
+    un planeta.\nMe dispongo a ver de d\xF3nde procede. \n\n*Entrando en la atmosfera*\n*Interferencias*\n*Aterrizaje
+    forzoso*\n\nParece ser que me he quedado sin combustible.\nInvestigando un poco
+    mi zona, he encontrado un huevo.\nLo cuidar\xE9 a ver que sale. Tengo curiosidad.\nUn
     ser extra\xF1o ha salido del huevo, parece inofensivo.\nTras unos d\xEDas de
     cuidados mi nuevo compa\xF1ero de vida parece ser que no me da\xF1ar\xE1.\nA-Lien
     me ha tra\xEDdo una especia de mineral, creo que podr\xE9 utilizarlo c\xF3mo
     combustible. \nEs hora de buscar m\xE1s minerales de esto y cargar mi nave para
-    poder salir de aqu\xED. \nA-Lien me sigue en esta aventura. Creo que me vendr\xE1
-    bien para defenderme de los suyos.\nFin de la transmisi\xF3n"
+    poder salir de aqu\xED. \nA-Lien me sigue en esta aventura.\nCreo que me vendr\xE1
+    bien para defenderme de los suyos.\n\n---Fin de la transmisi\xF3n---"
 --- !u!222 &327011918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -448,6 +448,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327011915}
+  m_CullTransparentMesh: 1
+--- !u!1 &382069741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382069742}
+  - component: {fileID: 382069744}
+  - component: {fileID: 382069743}
+  m_Layer: 5
+  m_Name: HistoryContentPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &382069742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382069741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1575633404}
+  m_Father: {fileID: 576027823}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.05, y: 0.25}
+  m_AnchorMax: {x: 0.95, y: 0.75}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &382069743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382069741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0.42745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &382069744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382069741}
   m_CullTransparentMesh: 1
 --- !u!1 &518817312
 GameObject:
@@ -669,10 +745,9 @@ RectTransform:
   m_Children:
   - {fileID: 323673117}
   - {fileID: 1985288275}
-  - {fileID: 1875656605}
   - {fileID: 2143851787}
   - {fileID: 1105962648}
-  - {fileID: 1575633404}
+  - {fileID: 382069742}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -761,7 +836,7 @@ RectTransform:
   m_Children:
   - {fileID: 1379771101}
   m_Father: {fileID: 576027823}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12125, y: 0.06721443}
   m_AnchorMax: {x: 0.12125, y: 0.06721443}
@@ -1090,7 +1165,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1561285294}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.36916667
+  m_Size: 0.39151978
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1234,20 +1309,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575633403}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1921358387}
   - {fileID: 518817313}
   - {fileID: 1393731006}
-  m_Father: {fileID: 576027823}
-  m_RootOrder: 5
+  m_Father: {fileID: 382069742}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.45200002}
-  m_AnchorMax: {x: 0.5, y: 0.45200002}
+  m_AnchorMin: {x: 0.05, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 764.28, y: 238.5}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575633405
 MonoBehaviour:
@@ -1262,7 +1337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 327011916}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -1353,95 +1428,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1875656604
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1875656605}
-  - component: {fileID: 1875656607}
-  - component: {fileID: 1875656606}
-  m_Layer: 5
-  m_Name: History
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1875656605
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875656604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 576027823}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23.26}
-  m_SizeDelta: {x: 628.6, y: 230.4705}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1875656606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875656604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 940c7bfe37555e74ab664834609dd12c, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Inicio de la transmisi\xF3n\nComandante: Ash Troh\nNave: G4-M3  0V-3R\nCuaderno
-    de bit\xE1cora espacial. He recibido una se\xF1al de un planeta. Me dispongo
-    a ver de d\xF3nde procede. \nEntrando en la atmosfera\nInterferencias\nAterrizaje
-    forzoso\nParece ser que me he quedado sin combustible.\nInvestigando un poco
-    mi zona, he encontrado un huevo. Lo cuidar\xE9 a ver que sale. Tengo curiosidad.\nUn
-    ser extra\xF1o ha salido del huevo, parece inofensivo.\nTras unos d\xEDas de
-    cuidados mi nuevo compa\xF1ero de vida parece ser que no me da\xF1ar\xE1.\nA-Lien
-    me ha tra\xEDdo una especia de mineral, creo que podr\xE9 utilizarlo c\xF3mo
-    combustible. \nEs hora de buscar m\xE1s minerales de esto y cargar mi nave para
-    poder salir de aqu\xED. \nA-Lien me sigue en esta aventura. Creo que me vendr\xE1
-    bien para defenderme de los suyos.\nFin de la transmisi\xF3n"
---- !u!222 &1875656607
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875656604}
-  m_CullTransparentMesh: 1
 --- !u!1 &1921358386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,10 +1550,10 @@ RectTransform:
   m_Father: {fileID: 576027823}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.808}
-  m_AnchorMax: {x: 0.5, y: 0.808}
+  m_AnchorMin: {x: 0.34389037, y: 0.7863334}
+  m_AnchorMax: {x: 0.65189695, y: 0.89633334}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 211.4596, y: 70.068}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985288276
 MonoBehaviour:
@@ -1596,11 +1582,11 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 55
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: History
 --- !u!222 &1985288277
@@ -1718,7 +1704,7 @@ RectTransform:
   m_Children:
   - {fileID: 276444758}
   m_Father: {fileID: 576027823}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.06721443}
   m_AnchorMax: {x: 0.5, y: 0.06721443}
