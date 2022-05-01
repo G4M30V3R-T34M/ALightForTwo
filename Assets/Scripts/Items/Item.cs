@@ -14,6 +14,7 @@ public abstract class Item : MonoBehaviour
     AudioSource audioSource;
     SpriteRenderer sprite;
     Collider2D collider2d;
+    [SerializeField] GameObject ItemHint;
 
     protected void Awake() {
         visibility = GetComponent<VisibilityInteraction>();
@@ -28,6 +29,7 @@ public abstract class Item : MonoBehaviour
         audioSource.Play();
         sprite.enabled = false;
         collider2d.enabled = false;
+        ItemHint.SetActive(false);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

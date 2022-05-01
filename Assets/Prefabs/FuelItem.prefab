@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item: {fileID: 11400000, guid: 08ef5fa97bdafc841a17a511b9e24f91, type: 2}
+  ItemHint: {fileID: 882713815687626124}
 --- !u!82 &7327165595969660145
 AudioSource:
   m_ObjectHideFlags: 0
