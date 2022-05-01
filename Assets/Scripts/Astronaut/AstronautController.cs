@@ -94,7 +94,7 @@ public class AstronautController : MonoBehaviour
         }
         pickUpCoroutineReference = null;
         objectToPick.gameObject.GetComponent<Item>().DoAction(gameObject);
-        Destroy(objectToPick);
+        //Destroy(objectToPick);
         objectToPick = null;
         animator.Stop();
         animator.SetNextState();
