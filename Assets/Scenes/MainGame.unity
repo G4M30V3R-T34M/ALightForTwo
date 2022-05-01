@@ -812,14 +812,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DontGoAlone
       objectReference: {fileID: 0}
-    - target: {fileID: 5370897526832884032, guid: 7ce0c1cef8f474a4190698af969aac65, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5370897526832884032, guid: 7ce0c1cef8f474a4190698af969aac65, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ce0c1cef8f474a4190698af969aac65, type: 3}
 --- !u!1001 &1652298640
