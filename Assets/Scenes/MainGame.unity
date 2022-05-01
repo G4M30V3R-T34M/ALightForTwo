@@ -1189,6 +1189,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4222546264225188107, guid: 146a783baba342e4fadb8809c694a540, type: 3}
+      propertyPath: mainBar
+      value: 
+      objectReference: {fileID: 4200267587623391056}
+    - target: {fileID: 4222546264225188107, guid: 146a783baba342e4fadb8809c694a540, type: 3}
+      propertyPath: secondaryBar
+      value: 
+      objectReference: {fileID: 4200267587623391057}
     - target: {fileID: 4222546265363030448, guid: 146a783baba342e4fadb8809c694a540, type: 3}
       propertyPath: m_Name
       value: GoodAlien
@@ -1241,40 +1249,8 @@ PrefabInstance:
       propertyPath: GO_Manager
       value: 
       objectReference: {fileID: 881693167}
-    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3a90fa82043517c4e8b8fa95e23c4505, type: 3}
-    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 1472007996096534655, guid: fe4660d1587f54b45a95ae9c1b9a0180, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146a783baba342e4fadb8809c694a540, type: 3}
---- !u!1 &4222546264225188106 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4222546265363030448, guid: 146a783baba342e4fadb8809c694a540, type: 3}
-  m_PrefabInstance: {fileID: 4222546264225188105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4222546264225188107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4222546264225188106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e5f68d471dc4a4893f5889b7aac79f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainBar: {fileID: 4200267587623391056}
-  secondaryBar: {fileID: 4200267587623391057}
-  _lifeBar: {fileID: 11400000, guid: 08465952996bd4740ba3652a8e2a16df, type: 2}
 --- !u!1001 &5690235927372430351
 PrefabInstance:
   m_ObjectHideFlags: 0

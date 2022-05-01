@@ -5,11 +5,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(BA_AnimationController))]
 [RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(AudioSource))]
 public class BadAlienController : PoolableObject
 {
     enum TargetType {Light, Astronaut}
     [SerializeField] BadAlienScriptable alien;
     BA_AnimationController animator;
+    AudioSource audioSource;
     
     HealthManager healthManager;
 
@@ -27,6 +29,7 @@ public class BadAlienController : PoolableObject
     private void Awake() {
         healthManager = GetComponent<HealthManager>();
         animator = GetComponent<BA_AnimationController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start() {
@@ -148,6 +151,7 @@ public class BadAlienController : PoolableObject
     private void InteractWithTarget() {
         animator.Attack();
         if (CooldownCoroutieneReference == null) {
+            audioSource.Play();
             isAttacking = true;
             currentTarget.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
             CooldownCoroutieneReference = StartCoroutine(AtackCooldown());
