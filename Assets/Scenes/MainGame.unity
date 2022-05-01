@@ -253,6 +253,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6608186718383383926, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7738437308958787653, guid: 22a4867c330857e45926e6ebea7ea0ee, type: 3}
+    - target: {fileID: 6608186718383383926, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718383383926, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718383383926, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718383383927, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718383383927, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718383383927, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592504, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3074960104427775751, guid: 22a4867c330857e45926e6ebea7ea0ee, type: 3}
+    - target: {fileID: 6608186718693592504, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592504, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592504, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592505, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592505, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186718693592505, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186719389248878, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186719389248879, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6608186719781179064, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
       propertyPath: m_Name
       value: Astronaut
@@ -303,6 +367,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608186719781179071, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608186719814653265, guid: 0b5a304ee96761848b2c94f884c9be65, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
