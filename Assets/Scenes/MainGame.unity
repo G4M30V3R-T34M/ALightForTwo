@@ -1048,6 +1048,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3930920594909499212, guid: 271aa2418b0814f4b996e6f251617a45, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331071459251657492, guid: 271aa2418b0814f4b996e6f251617a45, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: efc4817355997d840afc1e5b181add19, type: 3}
+    - target: {fileID: 4331071459251657492, guid: 271aa2418b0814f4b996e6f251617a45, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331071459251657492, guid: 271aa2418b0814f4b996e6f251617a45, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7307260820891714235, guid: fe4660d1587f54b45a95ae9c1b9a0180, type: 2}
     - target: {fileID: 5624579262773013384, guid: 271aa2418b0814f4b996e6f251617a45, type: 3}
       propertyPath: m_Name
       value: HUD
