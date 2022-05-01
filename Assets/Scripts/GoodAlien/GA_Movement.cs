@@ -14,6 +14,7 @@ public class GA_Movement : MonoBehaviour
     GoodAlienScriptable alien;
     GoodAlienMain alienMain;
     GA_AnimationController animatorController;
+    [SerializeField] AudioSource attackAudioSource;
 
     int obstacles;
 
@@ -104,15 +105,13 @@ public class GA_Movement : MonoBehaviour
     }
 
     private void DoAttack() {
-        // TODO
-        Debug.Log("PERFORM ATTACK");
+        attackAudioSource.Play();
         animatorController.Attack();
         gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageValue);
     }
 
     private void DoEat() {
-        // TODO
-        Debug.Log("EAT FLARE");
+        attackAudioSource.Play();
         animatorController.Attack();
         gameObjectDestination.GetComponent<HealthManager>().TakeDamage(alien.damageToFlare);
     }
@@ -128,5 +127,4 @@ public class GA_Movement : MonoBehaviour
             obstacles--;
         }
     }
-
 }

@@ -28,6 +28,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-7405594459549914522
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GAlienAttack
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7471c213459c8da45b80afab50ae0da8
+  m_Children: []
+  m_Volume: 940b56f5a48af3543a4a21f755c37df2
+  m_Pitch: 3e74771a691eec846bc74d032f20d8bc
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5420058196663230228}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-5420058196663230228
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 32bf9c4512ae8314696d16a276f0c0b1
+  m_EffectName: Attenuation
+  m_MixLevel: efa4413bc6b6d554dbb1a2ee54597a9b
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-5023364823613325916
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -90,6 +123,7 @@ AudioMixerController:
     - 455927d9276d0d548a8c4c1abbf07e05
     - 93c4ab4be7cd7a14c88d2dfcd058a97e
     - c68c2cec2625b854caf4537d425bcadb
+    - 7471c213459c8da45b80afab50ae0da8
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -222,6 +256,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: 1472007996096534655}
   - {fileID: -5023364823613325916}
+  - {fileID: -7405594459549914522}
   m_Volume: 4574a330f9f127440996fabd0de6899f
   m_Pitch: 4198cea2ae8f6494bb5910c7c5e9d753
   m_Send: 00000000000000000000000000000000
