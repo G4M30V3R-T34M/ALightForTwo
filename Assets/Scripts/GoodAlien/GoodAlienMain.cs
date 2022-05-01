@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(GA_Shout))]
 [RequireComponent(typeof(VisibilityInteraction))]
 [RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(AudioSource))]
 public class GoodAlienMain : MonoBehaviour
 {
     VisibilityInteraction visibility;
@@ -16,6 +17,7 @@ public class GoodAlienMain : MonoBehaviour
 
     [SerializeField] GameOverManager GO_Manager;
     [SerializeField] GoodAlienScriptable _alien ;
+    [SerializeField] AudioSource healAudioSource;
     public GoodAlienScriptable Alien { get { return _alien; } }
 
     GAFree_Controller freeController;
@@ -58,7 +60,9 @@ public class GoodAlienMain : MonoBehaviour
     private void EnterLight() {
         if (healingCoroutineReference != null) {
             StopCoroutine(healingCoroutineReference);
+            healingCoroutineReference = null;
         }
+        healAudioSource.Stop();
     }
     private void ExitLight() {
         if (healingCoroutineReference == null) {
@@ -73,10 +77,13 @@ public class GoodAlienMain : MonoBehaviour
 
     private IEnumerator Healing()
     {
+        healAudioSource.Play();
         while(healthManager.CanHeal()) {
             healthManager.Heal(_alien.HealValue);
             yield return new WaitForSeconds(_alien.waitBetweenHeal);
         }
+        healingCoroutineReference = null;
+        healAudioSource.Stop();
     }
 
 }
