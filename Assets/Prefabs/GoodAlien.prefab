@@ -20,6 +20,9 @@ GameObject:
   - component: {fileID: 4222546265363030474}
   - component: {fileID: 8335969566178852134}
   - component: {fileID: 4271739527735703855}
+  - component: {fileID: 8763888575257037035}
+  - component: {fileID: 5494456986035734142}
+  - component: {fileID: 4222546264225188107}
   m_Layer: 10
   m_Name: GoodAlien
   m_TagString: Untagged
@@ -153,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthManager: {fileID: 0}
-  GO_Manager: {fileID: 5611085087009442736, guid: af67e5407f52513469b9a691953b9050, type: 3}
+  GO_Manager: {fileID: 0}
   _alien: {fileID: 11400000, guid: 5e757fbb0e8ec8343a3d4687bbcae4d6, type: 2}
 --- !u!114 &4222546265363030472
 MonoBehaviour:
@@ -228,6 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caadf61fecacf148afad9c172ec1335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  isProtected: 0
 --- !u!95 &4271739527735703855
 Animator:
   serializedVersion: 3
@@ -247,6 +252,129 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8763888575257037035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222546265363030448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a9adfc358f99940b99825aa8ceb4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &5494456986035734142
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222546265363030448}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1472007996096534655, guid: fe4660d1587f54b45a95ae9c1b9a0180, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 3a90fa82043517c4e8b8fa95e23c4505, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4222546264225188107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222546265363030448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e5f68d471dc4a4893f5889b7aac79f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainBar: {fileID: 0}
+  secondaryBar: {fileID: 0}
+  _lifeBar: {fileID: 11400000, guid: 08465952996bd4740ba3652a8e2a16df, type: 2}
 --- !u!1 &6376750064896064235
 GameObject:
   m_ObjectHideFlags: 0

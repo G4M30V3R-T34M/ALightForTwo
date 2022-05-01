@@ -1241,6 +1241,18 @@ PrefabInstance:
       propertyPath: GO_Manager
       value: 
       objectReference: {fileID: 881693167}
+    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3a90fa82043517c4e8b8fa95e23c4505, type: 3}
+    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5494456986035734142, guid: 146a783baba342e4fadb8809c694a540, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 1472007996096534655, guid: fe4660d1587f54b45a95ae9c1b9a0180, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146a783baba342e4fadb8809c694a540, type: 3}
 --- !u!1 &4222546264225188106 stripped
