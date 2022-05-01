@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Astronaut.unity
     guid: 551ba3844dafc99408f43628c2221b51
   - enabled: 1
-    path: Assets/Scenes/GoodAlienTestScene.unity
+    path: Assets/Scenes/MainGame.unity
     guid: 105d64d9eaadc9641836c8960aedcc45
   - enabled: 1
     path: Assets/Scenes/History.unity
