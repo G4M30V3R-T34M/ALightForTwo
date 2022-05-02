@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(GoodAlienMain))]
 [RequireComponent(typeof(GA_AnimationController))]
+[RequireComponent(typeof(AudioSource))]
 public class GA_Shout : MonoBehaviour
 {
     [SerializeField] GameObject shout;
@@ -12,6 +13,7 @@ public class GA_Shout : MonoBehaviour
     float coolDown;
     Coroutine stopShoutCoroutine;
     GA_AnimationController animatorController;
+    [SerializeField] AudioSource shoutAudioSource;
 
     void Awake() {
         alien = GetComponent<GoodAlienMain>();
@@ -34,6 +36,7 @@ public class GA_Shout : MonoBehaviour
 
     private void DoShout() {
         animatorController.Shout();
+        shoutAudioSource.Play();
         coolDown = alien.Alien.shoutCoolDown;
         shout.SetActive(true);
         if (stopShoutCoroutine == null) {

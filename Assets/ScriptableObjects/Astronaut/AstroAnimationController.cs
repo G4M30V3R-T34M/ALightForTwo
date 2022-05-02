@@ -33,7 +33,7 @@ public class AstroAnimationController : MonoBehaviour
     public void Stop() {
         if (
             currentState == AstroAnimStates.Iddle ||
-            currentState== AstroAnimStates.Movement
+            currentState == AstroAnimStates.Movement
         ) {
             animator.SetInteger(KEY_STATE, (int)AstroAnimStates.Iddle);
             currentState = AstroAnimStates.Iddle;
@@ -45,7 +45,8 @@ public class AstroAnimationController : MonoBehaviour
     public void Move() {
         if (
             currentState == AstroAnimStates.Iddle ||
-            currentState== AstroAnimStates.Movement
+            currentState == AstroAnimStates.Movement ||
+            currentState == AstroAnimStates.Pick 
         ) {
             animator.SetInteger(KEY_STATE, (int)AstroAnimStates.Movement);
             currentState = AstroAnimStates.Movement;

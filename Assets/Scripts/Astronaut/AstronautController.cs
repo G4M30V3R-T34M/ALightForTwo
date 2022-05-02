@@ -49,7 +49,7 @@ public class AstronautController : MonoBehaviour
 
     public void Update() {
         //Debug.Log($"Astronaut is visible {isVisible}");
-        if (pickableObject && IsTryingToPickUp()) {
+        if (pickableObject && IsTryingToPickUp() && pickUpCoroutineReference == null) {
             animator.Pick();
             pickUpCoroutineReference = StartCoroutine(PickUpItem());
         }
@@ -94,7 +94,7 @@ public class AstronautController : MonoBehaviour
         }
         pickUpCoroutineReference = null;
         objectToPick.gameObject.GetComponent<Item>().DoAction(gameObject);
-        Destroy(objectToPick);
+        //Destroy(objectToPick);
         objectToPick = null;
         animator.Stop();
         animator.SetNextState();

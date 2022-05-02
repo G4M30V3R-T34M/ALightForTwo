@@ -21,7 +21,7 @@ MonoBehaviour:
   shoutInitialCooldown: 1
   shoutDistance: 5
   damageValue: 1
-  HealValue: 1
+  HealValue: 50
   selfDamage: 1
   damageToFlare: 3
-  waitBetweenHeal: 0
+  waitBetweenHeal: 0.5

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(CircleCollider2D))]
 public class DontGoAlone : MonoBehaviour
 {
     enum Status {Astronaut, Alien, TravelToAstronaut, TravelToAlien}
@@ -14,12 +16,16 @@ public class DontGoAlone : MonoBehaviour
 
     [SerializeField] DontGoAloneScriptable dontGoAlone;
     HealthManager health;
+    AudioSource audioSource;
+    CircleCollider2D lightCircleCollider;
     Coroutine moveToDestinationCoroutine;
 
     private void Awake() {
         astronaut = FindObjectOfType<AstronautController>();
         alien = FindObjectOfType<GoodAlienMain>();
         health = GetComponent<HealthManager>();
+        audioSource = GetComponent<AudioSource>();
+        lightCircleCollider = GetComponent<CircleCollider2D>();
 
         transform.position = astronaut.transform.position;
         currentStatus = Status.Astronaut;
@@ -45,12 +51,14 @@ public class DontGoAlone : MonoBehaviour
     }
 
     private void StartSwitch() {
+        audioSource.Play();
         if (currentStatus == Status.Astronaut) {
             // TODO :: CHANGE THE ASTRONAUT SPRITES
             currentStatus = Status.TravelToAlien;
         } else {
             alien.SwitchController();
             flare.localScale = new Vector3(5, 5, 5);
+            lightCircleCollider.radius = 2.5f;
             currentStatus = Status.TravelToAstronaut;
         }
         health.isProtected = true;
@@ -79,6 +87,7 @@ public class DontGoAlone : MonoBehaviour
             currentStatus = Status.Alien;
             alien.SwitchController();
             flare.localScale = new Vector3(1, 1, 1);
+            lightCircleCollider.radius = 1;
         } else {
             currentStatus = Status.Astronaut;
             health.isProtected = false;

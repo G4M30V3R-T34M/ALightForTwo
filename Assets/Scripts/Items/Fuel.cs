@@ -14,5 +14,6 @@ public class Fuel : Item
     public override void DoAction(GameObject picker = null) {
         Debug.Log("Fuel Getted");
         hudManager.FuelAdquired();
+        StartCoroutine(PlaySoundAndDestroy());
     }
 }

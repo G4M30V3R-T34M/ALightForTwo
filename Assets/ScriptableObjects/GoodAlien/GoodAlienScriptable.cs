@@ -30,7 +30,7 @@ public class GoodAlienScriptable : ScriptableObject
     [Range(0, 5)]
     public int damageValue;
 
-    [Range(0, 30)]
+    [Range(0, 300)]
     public int HealValue;
 
     [Range(0, 30)]

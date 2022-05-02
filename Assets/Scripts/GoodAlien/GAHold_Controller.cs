@@ -4,12 +4,14 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(AudioSource))]
 public class GAHold_Controller : MonoBehaviour
 {
     GA_Movement gaMovement;
 
     HealthManager healthManager;
     GoodAlienScriptable _alien;
+    [SerializeField] AudioSource damageAudioSource;
 
     void Awake() {
         gaMovement = GetComponent<GA_Movement>();
@@ -24,6 +26,13 @@ public class GAHold_Controller : MonoBehaviour
         }
 
         healthManager.TakeDamage(_alien.selfDamage);
+    }
+    private void OnEnable() { 
+        damageAudioSource.Play(); 
+    }
+
+    private void OnDisable() {
+        damageAudioSource.Stop();
     }
 
 }
