@@ -28,7 +28,7 @@ public class HUD_Manager : MonoBehaviour
         index++;
         if (index == fuel.Length) {
             audioSource.Play();
-            GO_Manager.GameOver();
+            GO_Manager.Win();
         }
     }
 }
