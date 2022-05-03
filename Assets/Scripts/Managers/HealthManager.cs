@@ -45,7 +45,6 @@ public class HealthManager : MonoBehaviour
         if (lifeBar)
         {
             float lifePercent = ((float)currentHealth) / maxHealth;
-            print(lifePercent);
             lifeBar.UpdateBar(lifePercent);
         }
     }

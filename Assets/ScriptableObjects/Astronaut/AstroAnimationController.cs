@@ -30,6 +30,22 @@ public class AstroAnimationController : MonoBehaviour
         animator.SetInteger(KEY_DIRECTION, (int)Directions.Down);
     }
 
+    public void SetXSpeed(float x) {
+        animator.SetFloat("xSpeed", x);
+    }
+
+    public void SetYSpeed(float y) {
+        animator.SetFloat("ySpeed", y);
+    }
+
+    public void RecieveLight() {
+        animator.SetTrigger("RecieveLight");
+    }
+
+    public void ThrowLight() {
+        animator.SetTrigger("ThrowLight");
+    }
+
     public void Stop() {
         if (
             currentState == AstroAnimStates.Iddle ||

@@ -116,4 +116,12 @@ public class AstronautController : MonoBehaviour
         GO_Manager.GameOver();
     }
 
+    public void RecieveLight() {
+        animator.RecieveLight();
+    }
+
+    public void ThrowLight() {
+        animator.ThrowLight();
+    }
+
 }
