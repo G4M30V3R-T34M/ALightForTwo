@@ -79,8 +79,6 @@ public class DontGoAlone : MonoBehaviour
             translate.Normalize();
             translate *= dontGoAlone.speed * Time.deltaTime;
             transform.position = transform.position + translate;
-            Debug.Log("x = " + translate.x + " // y = " + translate.y);
-            //transform.Translate(translate);
             UpdateRotation(translate);
             yield return null;
         }

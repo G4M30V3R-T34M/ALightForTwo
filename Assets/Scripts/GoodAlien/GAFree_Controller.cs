@@ -24,7 +24,6 @@ public class GAFree_Controller : MonoBehaviour
         if (TryGetLayerHit(hits, Layers.Flare, out currentHit)) { return currentHit; }
         if (TryGetLayerHit(hits, Layers.Scenario, out currentHit)) { return currentHit; }
 
-        Debug.LogError("Didn't find any objective for Good Alien Action");
         return currentHit; // first hit in the array
     }
 
