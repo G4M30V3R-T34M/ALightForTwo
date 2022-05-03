@@ -29,7 +29,7 @@ Juego cooperativo en el que un jugador con el teclado controlará al astronauta 
 
 <img src="Assets/Sprites/TutorialClean.png" alt="Characters" width="600"/>
 
-<img src="Assets/Sprites/Mapa.png" alt="Map" width="600"/>
+<img src="Assets/Sprites/mapa.png" alt="Map" width="600"/>
 
 <br></br>
 
