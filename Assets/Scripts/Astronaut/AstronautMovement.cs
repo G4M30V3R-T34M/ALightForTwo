@@ -23,9 +23,7 @@ public class AstronautMovement : MonoBehaviour
             animator.Move();
             UpdateAnimatorDirection();
             UpdatePosition();
-        }
-        else
-        {
+        } else {
             animator.Stop();
         }
     }
@@ -33,6 +31,10 @@ public class AstronautMovement : MonoBehaviour
     private void UpdateAnimatorDirection() {
         float hor = Input.GetAxisRaw("Horizontal");
         float vert = Input.GetAxisRaw("Vertical");
+
+        animator.SetXSpeed(hor);
+        animator.SetYSpeed(vert);
+
         if (Mathf.Abs(hor) > Mathf.Abs(vert)) {
             if (hor > 0) {
                 animator.ChangeDirection(Directions.Right);

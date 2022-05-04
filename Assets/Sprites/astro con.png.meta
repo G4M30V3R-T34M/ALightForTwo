@@ -1,7 +1,97 @@
 fileFormatVersion: 2
 guid: f7447c05d72608d42b75ee7963fab812
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 341891939766891610
+    second: astro_light_move_down_1
+  - first:
+      213: 6412747723162185249
+    second: astro_light_move_down_2
+  - first:
+      213: -4412257002671579956
+    second: astro_light_move_down_3
+  - first:
+      213: 156392214000064051
+    second: astro_light_move_down_4
+  - first:
+      213: -1490491054128091767
+    second: astro con_4
+  - first:
+      213: 4935655382518445867
+    second: astro_light_hurt_1
+  - first:
+      213: -1023919351411380953
+    second: astro con_6
+  - first:
+      213: -3337836519005725976
+    second: astro con_7
+  - first:
+      213: -7402244699220142580
+    second: astro con_8
+  - first:
+      213: -7934301440412485578
+    second: astro con_9
+  - first:
+      213: -3166336799760146328
+    second: astro con_10
+  - first:
+      213: 4171921391247929812
+    second: astro_light_move_left_1
+  - first:
+      213: -7351219313529325665
+    second: astro_light_move_left_2
+  - first:
+      213: 3358116416657309669
+    second: astro_light_move_left_3
+  - first:
+      213: -7885000439700771879
+    second: astro_light_move_left_4
+  - first:
+      213: -6428403913654885298
+    second: astro_light_pick_down
+  - first:
+      213: 2823323237063081543
+    second: astro_light_move_right_1
+  - first:
+      213: -5412996336566648064
+    second: astro_light_move_right_2
+  - first:
+      213: 2780177484986846831
+    second: astro_light_move_right_3
+  - first:
+      213: -4046523304197984793
+    second: astro_light_move_right_4
+  - first:
+      213: -7542364197036273108
+    second: astro_light_pick_right
+  - first:
+      213: -4161782288181844897
+    second: astro_light_pick_left
+  - first:
+      213: 6590775556688257410
+    second: astro_light_move_up_1
+  - first:
+      213: -7984434532608127745
+    second: astro_light_move_up_2
+  - first:
+      213: -732829183812359978
+    second: astro_light_move_up_3
+  - first:
+      213: 5198639173561472851
+    second: astro con_25
+  - first:
+      213: 3908529811567628327
+    second: astro_light_move_up_4
+  - first:
+      213: -2186520909725028775
+    second: astro con_27
+  - first:
+      213: -1362050111848546479
+    second: astro_light_pick_up
+  - first:
+      213: -3957045882161244854
+    second: astro_light_dead
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +131,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +165,516 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: astro_light_move_down_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 825
+        width: 145
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54ff5568e4aeb400800000000000000
+      internalID: 341891939766891610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_down_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 820
+        width: 140
+        height: 173
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ee649f318aef850800000000000000
+      internalID: 6412747723162185249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_down_3
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 825
+        width: 148
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccd70a12a384c2c0800000000000000
+      internalID: -4412257002671579956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_down_4
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 820
+        width: 136
+        height: 173
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3365c19d3ed9b2200800000000000000
+      internalID: 156392214000064051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro con_4
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 821
+        width: 157
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d2cc18846b05be0800000000000000
+      internalID: -1490491054128091767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_hurt_1
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 822
+        width: 162
+        height: 171
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27b1c09b68fe7440800000000000000
+      internalID: 4935655382518445867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_left_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 575
+        width: 125
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1bf2cc664a5e930800000000000000
+      internalID: 4171921391247929812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_left_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 573
+        width: 125
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97f7179bf83bf990800000000000000
+      internalID: -7351219313529325665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_left_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 578
+        width: 125
+        height: 165
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef3441c61d6a9e20800000000000000
+      internalID: 3358116416657309669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_left_4
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 572
+        width: 125
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db26d960e9d29290800000000000000
+      internalID: -7885000439700771879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_pick_down
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 568
+        width: 126
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44aedd13b8b9c6a0800000000000000
+      internalID: -6428403913654885298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_right_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 323
+        width: 125
+        height: 168
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74e304786857e2720800000000000000
+      internalID: 2823323237063081543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_right_2
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 330
+        width: 125
+        height: 164
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003447cd28c21e4b0800000000000000
+      internalID: -5412996336566648064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_right_3
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 320
+        width: 125
+        height: 171
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e0e2d41bc259620800000000000000
+      internalID: 2780177484986846831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_right_4
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 327
+        width: 125
+        height: 167
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed60f58e7cd7d7c0800000000000000
+      internalID: -4046523304197984793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_pick_right
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 327
+        width: 126
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22570559b3245790800000000000000
+      internalID: -7542364197036273108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_pick_left
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 327
+        width: 126
+        height: 161
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54a8681f016e36c0800000000000000
+      internalID: -4161782288181844897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_up_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 81
+        width: 135
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2812bba0373277b50800000000000000
+      internalID: 6590775556688257410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_up_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 77
+        width: 135
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcc78f8817913190800000000000000
+      internalID: -7984434532608127745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_up_3
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 81
+        width: 133
+        height: 163
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d823d17db774d5f0800000000000000
+      internalID: -732829183812359978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_move_up_4
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 85
+        width: 122
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7205384c723ed3630800000000000000
+      internalID: 3908529811567628327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_pick_up
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 81
+        width: 121
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f7cf4c3a6091de0800000000000000
+      internalID: -1362050111848546479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astro_light_dead
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 90
+        width: 210
+        height: 120
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a455bd94cbfb519c0800000000000000
+      internalID: -3957045882161244854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

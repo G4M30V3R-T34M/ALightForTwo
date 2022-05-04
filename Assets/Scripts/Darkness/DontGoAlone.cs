@@ -19,6 +19,7 @@ public class DontGoAlone : MonoBehaviour
     AudioSource audioSource;
     CircleCollider2D lightCircleCollider;
     Coroutine moveToDestinationCoroutine;
+    SpriteRenderer sprite;
 
     private void Awake() {
         astronaut = FindObjectOfType<AstronautController>();
@@ -26,9 +27,11 @@ public class DontGoAlone : MonoBehaviour
         health = GetComponent<HealthManager>();
         audioSource = GetComponent<AudioSource>();
         lightCircleCollider = GetComponent<CircleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
 
         transform.position = astronaut.transform.position;
         currentStatus = Status.Astronaut;
+        sprite.enabled = false;
     }
 
     private void Update() {
@@ -51,9 +54,10 @@ public class DontGoAlone : MonoBehaviour
     }
 
     private void StartSwitch() {
+        sprite.enabled = true;
         audioSource.Play();
         if (currentStatus == Status.Astronaut) {
-            // TODO :: CHANGE THE ASTRONAUT SPRITES
+            astronaut.ThrowLight();
             currentStatus = Status.TravelToAlien;
         } else {
             alien.SwitchController();
@@ -71,10 +75,11 @@ public class DontGoAlone : MonoBehaviour
             : alien.gameObject;
 
         while (Vector2.Distance(transform.position, destination.transform.position) >= dontGoAlone.interactionDistance) {
-            Vector2 translate = destination.transform.position - transform.position;
+            Vector3 translate = destination.transform.position - transform.position;
             translate.Normalize();
             translate *= dontGoAlone.speed * Time.deltaTime;
-            transform.Translate(translate);
+            transform.position = transform.position + translate;
+            UpdateRotation(translate);
             yield return null;
         }
 
@@ -82,7 +87,22 @@ public class DontGoAlone : MonoBehaviour
         EndSwitch();
     }
 
+    private void UpdateRotation (Vector2 movement) {
+        movement.Normalize();
+        float angle = 0f;
+        if (movement.y >= 0) {
+            angle = 90 * (1 - movement.y);
+        } else if (movement.y <= 0) {
+            angle = 90 * (1 + (-1 * movement.y));
+        }
+        if (movement.x >= 0) {
+            angle *= -1;
+        }
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
     private void EndSwitch() {
+        sprite.enabled = false;
         if (currentStatus == Status.TravelToAlien) {
             currentStatus = Status.Alien;
             alien.SwitchController();
@@ -91,7 +111,7 @@ public class DontGoAlone : MonoBehaviour
         } else {
             currentStatus = Status.Astronaut;
             health.isProtected = false;
-            // TODO :: ASTRONAUT -- Switch activate dontGoAloneSprites
+            astronaut.RecieveLight();
         }
     }
 }

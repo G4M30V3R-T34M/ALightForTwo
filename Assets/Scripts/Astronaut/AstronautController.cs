@@ -48,7 +48,6 @@ public class AstronautController : MonoBehaviour
     }
 
     public void Update() {
-        //Debug.Log($"Astronaut is visible {isVisible}");
         if (pickableObject && IsTryingToPickUp() && pickUpCoroutineReference == null) {
             animator.Pick();
             pickUpCoroutineReference = StartCoroutine(PickUpItem());
@@ -114,6 +113,14 @@ public class AstronautController : MonoBehaviour
 
     private void Die() {
         GO_Manager.GameOver();
+    }
+
+    public void RecieveLight() {
+        animator.RecieveLight();
+    }
+
+    public void ThrowLight() {
+        animator.ThrowLight();
     }
 
 }
