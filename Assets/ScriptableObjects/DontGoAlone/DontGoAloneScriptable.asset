@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02827b3a4e3fe9479e5ed56a99355ed, type: 3}
   m_Name: DontGoAloneScriptable
   m_EditorClassIdentifier: 
-  interactionDistance: 0.5
+  interactionDistance: 0.2
   speed: 5
