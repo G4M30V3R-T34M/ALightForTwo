@@ -1,7 +1,55 @@
 fileFormatVersion: 2
 guid: 69616a8e33eb820449630eec14b6bf4a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4505232567125797062
+    second: alien luz_0
+  - first:
+      213: -1498097647268280379
+    second: alien luz_1
+  - first:
+      213: 8533826240286222301
+    second: alien luz_3
+  - first:
+      213: -8085920226003478640
+    second: alien luz_4
+  - first:
+      213: -1326183499303960354
+    second: alien luz_6
+  - first:
+      213: -3314053085676569570
+    second: alien luz_8
+  - first:
+      213: 3660439209973214343
+    second: alien luz_10
+  - first:
+      213: -464602581676075693
+    second: alien luz_12
+  - first:
+      213: -5734709588733857245
+    second: alien luz_18
+  - first:
+      213: -8202701142137601955
+    second: alien luz_21
+  - first:
+      213: -2699159424941168177
+    second: alien luz_22
+  - first:
+      213: -1889874058745821724
+    second: alien luz_25
+  - first:
+      213: -4273794063754815521
+    second: alien luz_33
+  - first:
+      213: -5556559904648113372
+    second: alien luz_35
+  - first:
+      213: -4323587274552694286
+    second: alien luz_36
+  - first:
+      213: 5801342497622980438
+    second: alien luz_37
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +89,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 170
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +123,369 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: alien luz_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 810
+        width: 167
+        height: 215
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3712f599d23a71c0800000000000000
+      internalID: -4505232567125797062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 804
+        width: 167
+        height: 232
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7c9b78020b53be0800000000000000
+      internalID: -1498097647268280379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_3
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 809
+        width: 167
+        height: 215
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7ea2b50cd3e6670800000000000000
+      internalID: 8533826240286222301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_4
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 804
+        width: 167
+        height: 229
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0979aee356a09cf80800000000000000
+      internalID: -8085920226003478640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 564
+        width: 166
+        height: 206
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0c0014223789de0800000000000000
+      internalID: -1326183499303960354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_8
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 566
+        width: 182
+        height: 210
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cf575f64e1202d0800000000000000
+      internalID: -3314053085676569570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_10
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 564
+        width: 169
+        height: 207
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c6d50511e7cc230800000000000000
+      internalID: 3660439209973214343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_12
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 563
+        width: 186
+        height: 220
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355d77dd9666d89f0800000000000000
+      internalID: -464602581676075693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 309
+        width: 180
+        height: 213
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322fd7943083a60b0800000000000000
+      internalID: -5734709588733857245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_21
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 310
+        width: 165
+        height: 208
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d50823065c62a2e80800000000000000
+      internalID: -8202701142137601955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_22
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 312
+        width: 180
+        height: 215
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9eb34cdc8aa8ad0800000000000000
+      internalID: -2699159424941168177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_25
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 310
+        width: 169
+        height: 207
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5ca3a7e81d5c5e0800000000000000
+      internalID: -1889874058745821724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_33
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 65
+        width: 186
+        height: 211
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd798ba41fe60b4c0800000000000000
+      internalID: -4273794063754815521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_35
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 59
+        width: 189
+        height: 225
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4235546e43223e2b0800000000000000
+      internalID: -5556559904648113372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_36
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 65
+        width: 186
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f923e8f7488ff3c0800000000000000
+      internalID: -4323587274552694286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: alien luz_37
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 59
+        width: 189
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657f137c342828050800000000000000
+      internalID: 5801342497622980438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

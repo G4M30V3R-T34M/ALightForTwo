@@ -68,6 +68,10 @@ public class GA_Movement : MonoBehaviour
     }
 
     private void UpdateAnimator(Vector2 trans) {
+        
+        animatorController.SetXSpeed(trans.x);
+        animatorController.SetYSpeed(trans.y);
+
         if (Mathf.Abs(trans.x) > Mathf.Abs(trans.y)) {
             if (trans.x > 0) {
                 animatorController.ChangeDirection(Directions.Right);
