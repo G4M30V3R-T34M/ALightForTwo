@@ -34,5 +34,4 @@ public class GAHold_Controller : MonoBehaviour
     private void OnDisable() {
         damageAudioSource.Stop();
     }
-
 }

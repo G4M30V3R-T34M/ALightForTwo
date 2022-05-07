@@ -61,6 +61,7 @@ public class DontGoAlone : MonoBehaviour
             currentStatus = Status.TravelToAlien;
         } else {
             alien.SwitchController();
+            alien.ThrowLight();
             flare.localScale = new Vector3(5, 5, 5);
             lightCircleCollider.radius = 2.5f;
             currentStatus = Status.TravelToAstronaut;
@@ -108,6 +109,7 @@ public class DontGoAlone : MonoBehaviour
             alien.SwitchController();
             flare.localScale = new Vector3(1, 1, 1);
             lightCircleCollider.radius = 1;
+            alien.RecieveLight();
         } else {
             currentStatus = Status.Astronaut;
             health.isProtected = false;

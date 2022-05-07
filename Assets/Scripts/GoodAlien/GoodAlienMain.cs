@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(VisibilityInteraction))]
 [RequireComponent(typeof(HealthManager))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(GA_AnimationController))]
 public class GoodAlienMain : MonoBehaviour
 {
     VisibilityInteraction visibility;
@@ -23,6 +24,8 @@ public class GoodAlienMain : MonoBehaviour
     GAFree_Controller freeController;
     GAHold_Controller holdController;
 
+    GA_AnimationController animator;
+
     public bool isFree { get { return freeController.isActiveAndEnabled; } }
     Coroutine healingCoroutineReference;
 
@@ -31,6 +34,7 @@ public class GoodAlienMain : MonoBehaviour
         healthManager = GetComponent<HealthManager>();
         freeController = GetComponent<GAFree_Controller>();
         holdController = GetComponent<GAHold_Controller>();
+        animator = GetComponent<GA_AnimationController>();
     }
 
     void Start() {
@@ -86,4 +90,14 @@ public class GoodAlienMain : MonoBehaviour
         healAudioSource.Stop();
     }
 
+    public void ThrowLight()
+    {
+        animator.ThrowLight();
+    }
+
+
+    public void RecieveLight()
+    {
+        animator.RecieveLight();
+    }
 }
